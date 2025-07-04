@@ -23,7 +23,7 @@ In meinem Portfolio findest du ausgewählte Projekte, an denen ich gearbeitet ha
 Du kannst mich gerne kontaktieren, wenn du Fragen hast, Feedback geben willst oder einfach vernetzt bleiben möchtest.
 
 - 📧 E-Mail: `deine.email@beispiel.de`
-- 💼 LinkedIn: [linkedin.com/in/onur-oezel](https://linkedin.com/in/onur-oezel) *(optional)*
+- 💼 LinkedIn: [linkedin.com/in/onur-oezel](https://linkedin.com/in/onur-oezel)
 - 🌐 Portfolio: [https://ne0nur.github.io](https://dein-username.github.io)
 
 ---
