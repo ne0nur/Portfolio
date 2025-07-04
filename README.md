@@ -1,16 +1,31 @@
-## Hi there 👋
+# 👋 Hallo, ich bin [Dein Vorname] – angehender Fachinformatiker für Systemintegration
 
-<!--
-**ne0nur/ne0nur** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+Willkommen auf meinem GitHub-Profil!  
+Ich befinde mich aktuell in der Ausbildung zum Fachinformatiker für Systemintegration und arbeite regelmäßig an praktischen Projekten, um mein Wissen in den Bereichen IT-Infrastruktur, Netzwerke, Automatisierung und Webentwicklung zu vertiefen.
 
-Here are some ideas to get you started:
+## 🚀 Über mich
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+- 🎓 Ausbildung: Fachinformatiker für Systemintegration
+- 💡 Interessen: IT-Security, Netzwerke, Microsoft Azure, PowerShell, Linux & Webentwicklung
+- 💻 Tools & Technologien:  
+  `Windows Server`, `Cisco Packet Tracer`, `ESP32`, `HTML/CSS`, `JavaScript`, `Python`, `PowerShell`
+- 🌱 Ich lerne aktuell für die Zertifizierung **AZ-104 (Microsoft Azure Administrator)**  
+- 🎯 Ziel: Mein Wissen in der IT-Sicherheit und Cloud-Verwaltung vertiefen und spannende Projekte realisieren
+
+## 🧩 Was du hier findest
+
+In meinem Portfolio findest du ausgewählte Projekte, an denen ich gearbeitet habe – von kleinen Automatisierungsskripten bis hin zu Webseiten wie z. B. einer **Taxi-Website**, die ich komplett selbst entwickelt habe.
+
+➡️ [Zu meinen Projekten](./projects.html) *(Link zur Projektübersicht im Portfolio)*
+
+## 📫 Kontakt
+
+Du kannst mich gerne kontaktieren, wenn du Fragen hast, Feedback geben willst oder einfach vernetzt bleiben möchtest.
+
+- 📧 E-Mail: `deine.email@beispiel.de`
+- 💼 LinkedIn: [linkedin.com/in/deinname](https://linkedin.com/in/deinname) *(optional)*
+- 🌐 Portfolio: [https://dein-username.github.io](https://dein-username.github.io)
+
+---
+
+Vielen Dank fürs Vorbeischauen! 🙌
