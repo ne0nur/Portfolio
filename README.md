@@ -1,7 +1,7 @@
 # 👋 Hallo, ich bin Onur – angehender Fachinformatiker für Systemintegration
 
 Willkommen auf meinem GitHub-Profil!  
-Ich befinde mich aktuell in der Ausbildung zum Fachinformatiker für Systemintegration und arbeite regelmäßig an praktischen Projekten, um mein Wissen in den Bereichen IT-Infrastruktur, Netzwerke, Automatisierung und Webentwicklung zu vertiefen.
+Ich befinde mich aktuell in einer Umschulung zum Fachinformatiker für Systemintegration und arbeite regelmäßig an praktischen Projekten, um mein Wissen in den Bereichen IT-Infrastruktur, Netzwerke, Automatisierung und Webentwicklung zu vertiefen.
 
 ## 🚀 Über mich
 
