@@ -8,7 +8,7 @@ Ich befinde mich aktuell in einer Umschulung zum Fachinformatiker für Systemint
 - 🎓 Ausbildung: Fachinformatiker für Systemintegration
 - 💡 Interessen: IT-Security, Netzwerke, Microsoft Azure, PowerShell, Linux & Webentwicklung
 - 💻 Tools & Technologien:  
-  `Windows Server`, `Cisco Packet Tracer`, `ESP32`, `HTML/CSS`, `JavaScript`, `Python`, `PowerShell`
+  `Linux`,`Windows Server`, `Cisco Packet Tracer`, `ESP32`, `HTML/CSS`, `JavaScript`, `Python`
 - 🌱 Ich lerne aktuell für die Zertifizierung **AZ-104 (Microsoft Azure Administrator)**  
 - 🎯 Ziel: Mein Wissen in der IT-Sicherheit und Cloud-Verwaltung vertiefen und spannende Projekte realisieren
 
