@@ -24,7 +24,7 @@ Du kannst mich gerne kontaktieren, wenn du Fragen hast, Feedback geben willst od
 
 - 📧 E-Mail: `deine.email@beispiel.de`
 - 💼 LinkedIn: [linkedin.com/in/onur-oezel](https://linkedin.com/in/onur-oezel)
-- 🌐 Portfolio: [https://ne0nur.github.io](https://ne0nur.github.io/Portfolio/](https://ne0nur.github.io/Portfolio/)
+- 🌐 Portfolio: [https://ne0nur.github.io/Portfolio/](https://ne0nur.github.io/Portfolio/)
 
 ---
 
