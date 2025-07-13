@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gameboy ESP Projekt - Onur Özel</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double&family=Pixelify+Sans&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/portfolio/projects/esp32_gbp/gbstyle.css">
+  <link rel="stylesheet" href="/gbstyle.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'project-bg': '#1C1A3E',
+            'project-accent': '#0DC7BF',
+            'project-header-footer': '#1C1A3E',
+          },
+          fontFamily: {
+            // Primäre Schriftart für Titel, starke Akzente (falls du sie explizit nutzen möchtest)
+            heading: ['"Bitcount Grid Double"', 'monospace', 'sans-serif'],
+            // Sekundäre Schriftart und Standard für den Body
+            body: ['"Pixelify Sans"', 'monospace', 'sans-serif'],
+            sans: ['"Pixelify Sans"', 'monospace', 'sans-serif'], // Standard-Schriftart für body
+          },
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-project-bg text-project-accent font-sans">
+  <header class="bg-project-header-footer py-6 px-4">
+    <nav id="main-nav" class="flex items-center justify-between p-6
+                               bg-project-header-footer/70 shadow-md rounded-b-xl
+                               fixed top-0 w-full z-50 transition-all duration-300 backdrop-blur">
+        <div class="font-bold text-xl tracking-wide text-project-accent font-heading">Gameboy ESP Pentest Projekt</div> <ul class="flex gap-8 text-base font-medium">
+          <li><a href="/index.html" class="text-project-accent hover:text-white transition">Portfolio</a></li>
+          <li><a href="/index.html#work" class="text-project-accent hover:text-white transition">Projekte</a></li>
+          <li><a href="/index.html#contact-info" class="text-project-accent hover:text-white transition">Kontakt</a></li>
+        </ul>
+      </nav>
+  </header>
+
+  <div class="pt-[96px]">
+    <main class="max-w-5xl mx-auto py-16 px-4">
+        <h2 class="text-4xl font-bold mb-6 text-project-accent font-heading">Projektübersicht & Motivation</h2> <h3 class="text-2xl font-bold mb-4 text-project-accent font-heading">Meine Motivation</h3> <p class="text-2xl mb-4 text-white font-body">Die Idee zu diesem Projekt kam mir, weil ich ein mobiles Pentest-Gerät wollte – aber eben nicht irgendeins, sondern etwas Eigenes, das nicht von der Stange ist. Klar, es gibt viele fertige Lösungen zu kaufen, aber genau das fand ich langweilig. Ich wollte verstehen, wie so ein Gerät von Grund auf funktioniert, es selbst bauen, gestalten und anpassen – ganz nebenbei auch mein Wissen im Bereich IoT und Hardware vertiefen.</p>
+        <p class="mb-4 text-red-600 font-heading text-center font-body">MIR IST BEWUSST, DASS PENTESTING VERANTWORTUNGSVOLL BETRIEBEN WERDEN MUSS. <br>DESHALB NUTZE ICH MEIN SETUP AUSSCHLIESSLICH LEGAL, IN SICHEREN, ERLAUBTEN UMGEBUNGEN WIE MEINEN EIGENEN TESTSYSTEMEN.</p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-project-accent font-heading">Teile zum Projekt</h2> <p class="mb-4 text-white font-body">Für den Bau meines Gameboy ESP Pentest-Geräts wurden verschiedene sorgfältig ausgewählte Hardware-Komponenten integriert:</p>
+        <ul class="list-disc list-inside space-y-2 text-white mb-6 font-body">
+          <li>ESP32-S3-DevKitC-1 Entwicklungsboard</li>
+          <li>2,4-Zoll-TFT-LCD-Anzeigemodul</li>
+          <li>Typ-C/Micro/Mini-USB 5V 1A 18650 TP4056 Lithium-Batterie Lade Modul</li>
+          <li>Soshine AAA 10440 350 mAh Li-Ionen-Akkus</li>
+          <li>MP1584EN Einstellbare 3A DC-DC Konverter Step Down Spannung Regler Modul</li>
+          <li>Neue Volle Gehäuse Shell für Nintend Gameboy GBA Shell</li>
+          <li>SS12D00 Unterbrecher Ein-Aus-Mini-Schiebeschalter</li>
+          <li>Micro SD Karte Mini TF Kartenleser Modul</li>
+          <li>LilyPad Button Connect Sensor Board Modul</li>
+          <li>GY-302 BH1750 Lichtintensitäts-Beleuchtungsmodul</li>
+          <li>diymore PCB0100 2-Kanal-Infrarot-Sendermodul</li>
+        </ul>
+      </section>
+
+      <section class="mb-12">
+
+        <div id="component-gallery" class="flex overflow-x-auto pb-4 space-x-6 scroll-smooth">
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/esp32_s3_c1_devkit.png" alt="ESP32-S3-DevKitC-1" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">ESP32-S3-DevKitC-1</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/spi_display_40pin.png" alt="2,4-Zoll-TFT-LCD-Anzeige" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">2,4-Zoll-TFT-LCD-Anzeige</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/tp4056_chargingmodule.png" alt="TP4056 Lade Modul" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">TP4056 Lade Modul</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/10440.png" alt="Soshine AAA 10440 Akkus" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">Soshine AAA 10440 Akkus</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/MP1584EN_DCconverter.png" alt="MP1584EN DC-DC Konverter" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">MP1584EN DC-DC Konverter</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/gbp.png" alt="Gameboy GBA Shell" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">Gameboy GBA Shell</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/SS12D00_switch.png" alt="SS12D00 Schiebeschalter" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">SS12D00 Schiebeschalter</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/tfcardmodule.png" alt="Micro SD Kartenleser" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">Micro SD Kartenleser</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/lilypad_button.png" alt="LilyPad Button Sensor" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">LilyPad Button Sensor</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/bh1750_lightsensor.png" alt="GY-302 BH1750 Lichtsensor" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">GY-302 BH1750 Lichtsensor</p>
+          </div>
+          <div class="flex-shrink-0 bg-project-header-footer p-4 rounded-lg shadow-md flex flex-col items-center text-center cursor-pointer component-item">
+            <img src="img/PCB01002-Kanal-Infrarot.png" alt="diymore Infrarot-Modul" class="w-full h-40 object-contain mb-2 rounded" loading="lazy">
+            <p class="font-semibold text-project-accent font-body">diymore Infrarot-Modul</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-project-accent font-heading">Technische Details</h2> <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-white">
+          <div>
+            <h3 class="text-2xl font-bold mb-4 text-project-accent font-heading">Hauptkomponenten</h3> <ul class="list-disc list-inside space-y-2 font-body">
+              <li>ESP32-S3 WROOM-1</li>
+              <li>2,4 Zoll TFT-Display</li>
+              <li>Soshine AAA 10440 Li-Ionen-Akkus</li>
+              <li>TP4056 Lithium-Batterie Lade Modul</li>
+              <li>MP1584EN DC-DC Konverter</li>
+              <li>Original Gameboy GBA Shell (modifiziert)</li>
+              <li>Mini-Schiebeschalter & Taster-Module</li>
+              <li>Micro SD Kartenleser</li>
+              <li>Lichtintensitäts- & Infrarot-Sendermodule</li>
+            </ul>
+          </div>
+          <div>
+            <h3 class="text-2xl font-bold mb-4 text-project-accent font-heading">Software & Firmware</h3> <ul class="list-disc list-inside space-y-2 font-body">
+              <li>ESP-IDF / Arduino IDE</li>
+              <li>Angepasste Firmware für Hardware-Interaktion und Pentest-Funktionen</li>
+            </ul>
+            <h3 class="text-2xl font-bold mt-6 mb-4 text-project-accent font-heading">Features</h3> <ul class="list-disc list-inside space-y-2 font-body">
+              <li>Mobiles Pentest-Gerät im Retro-Design</li>
+              <li>Wiederaufladbarer Akku mit Ladeanzeige</li>
+              <li>[Weitere Features, z.B. Wi-Fi-Scanning, Bluetooth-Analyse, IR-Steuerung, etc.]</li>
+              <li>Erweiterbare Software durch ESP32-S3</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="text-center py-12 bg-project-header-footer/50 rounded-lg shadow-inner">
+        <h2 class="text-3xl font-bold mb-6 text-project-accent font-heading">Fragen zum Projekt?</h2> <p class="text-white mb-8 font-body">Ich freue mich über dein Interesse an meinem Gameboy ESP Projekt. Kontaktiere mich gerne, wenn du Fragen hast oder mehr erfahren möchtest!</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="mailto:o.oezel@outlook.com" class="bg-project-accent text-project-bg px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 font-body">E-Mail</a>
+          <a href="tel:+4917623909643" class="bg-project-accent text-project-bg px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 font-body">Anrufen</a>
+          <a href="https://www.linkedin.com/in/onur-oezel/" target="_blank" class="bg-project-accent text-project-bg px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 font-body">LinkedIn</a>
+          <a href="https://learn.microsoft.com/users/onur-oezel/" target="_blank" class="bg-project-accent text-project-bg px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 font-body">Microsoft Learn</a>
+          <a href="https://tryhackme.com/p/10nur/" target="_blank" class="bg-project-accent text-project-bg px-6 py-3 rounded-full font-semibold hover:bg-white transition-colors duration-300 font-body">TryHackMe</a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="bg-project-header-footer text-project-accent py-6 mt-8 border-t border-project-accent">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+      <div>
+        <a href="impressum.html" class="hover:underline mr-4 text-project-accent font-body">Impressum</a>
+        <a href="https://github.com/ne0nur/portfolio" target="_blank" class="hover:underline text-project-accent font-body">GitHub</a>
+      </div>
+      <div class="font-body">by Onur & 🤖</div>
+    </div>
+  </footer>
+
+  <div id="image-lightbox" class="lightbox">
+    <span class="close-btn">&times;</span>
+    <img class="lightbox-content" id="lightbox-img">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const galleryItems = document.querySelectorAll('.component-item img');
+      const lightbox = document.getElementById('image-lightbox');
+      const lightboxImg = document.getElementById('lightbox-img');
+      const closeBtn = document.querySelector('.close-btn');
+
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          lightbox.classList.add('active');
+          lightboxImg.src = this.src;
+        });
+      });
+
+      closeBtn.addEventListener('click', function() {
+        lightbox.classList.remove('active');
+      });
+
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) {
+          lightbox.classList.remove('active');
+        }
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox.classList.contains('active')) {
+          lightbox.classList.remove('active');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,1695 @@
+/* Grundlegende Variablen und Resets */
+:root {
+    --primary: #000; /* Hauptfarbe: Schwarz */
+    --secondary: #fff; /* Zweitfarbe: Weiß */
+    --accent: #0078d7; /* Akzentfarbe: Apple-Blau */
+    --gray: #5e5e5e; /* Dunkles Grau für Text */
+    --light-gray: #f5f5f7; /* Helles Grau für Hintergründe */
+    --transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1); /* Sanfte Übergänge */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Zurückgesetzt auf Systemschriftarten für den "Apple-Look" */
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--secondary);
+    color: var(--primary);
+    line-height: 1.6;
+    overflow-x: hidden; /* Verhindert horizontales Scrollen des BODY */
+    scroll-behavior: smooth; /* Sanftes Scrollen bei Anker-Links */
+    /* DEIN NEUER STANDARD-CURSOR (wird geerbt, wenn nicht überschrieben) */
+    cursor: url('img/cursor.png'), auto;
+}
+
+/* Header-Stile */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    /* NEU: Header Hintergrundfarbe */
+    background-color: #97bfff;
+    transition: var(--transition);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0); /* Start ohne Schatten */
+    /* Zusätzliche Eigenschaften für den Glass-Effekt beim Scrollen */
+    -webkit-backdrop-filter: none; /* Standardmäßig kein Blur */
+    backdrop-filter: none; /* Standardmäßig kein Blur */
+}
+
+header.scrolled {
+    padding: 15px 5%;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); /* Schatten beim Scrollen */
+    /* NEU: Änderungen für den Glass-Effekt beim Scrollen mit Opazität 0.5 */
+    background-color: rgba(151, 191, 255, 0.5); /* Semitransparente Version der neuen Header-Farbe */
+    -webkit-backdrop-filter: blur(10px); /* Blur-Effekt für Webkit-Browser */
+    backdrop-filter: blur(10px); /* Blur-Effekt */
+}
+
+/* Neuer Wrapper für Logo und Loader */
+.header-left-items {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Abstand zwischen Logo und Loader */
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    /* Schriftfarbe Weiß (bleibt immer weiß für gute Lesbarkeit auf blau/transparent) */
+    color: var(--secondary);
+    text-decoration: none;
+    /* Da das Logo oft ein Link ist, erhält es den Pointer-Cursor */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin-left: 30px;
+}
+
+nav ul li a {
+    /* Schriftfarbe Weiß (bleibt immer weiß für gute Lesbarkeit auf blau/transparent) */
+    color: var(--secondary);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--transition);
+    position: relative;
+    /* DEIN NEUER POINTER-CURSOR FÜR LINKS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+nav ul li a:hover {
+    /* Behält die Akzentfarbe bei, die auf dem neuen Hintergrund sichtbar sein sollte */
+    color: var(--accent);
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: var(--accent);
+    transition: var(--transition);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Hero-Sektion (Willkommensbereich) */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 5%;
+    margin-top: -80px; /* Kompensiert die Header-Höhe */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("img/hero.png");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+    z-index: auto;
+    background-color: transparent;
+}
+
+.hero h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    max-width: 600px;
+    margin-bottom: 40px;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Allgemeine Button-Stile */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: var(--accent);
+    color: var(--secondary);
+    text-decoration: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: var(--transition);
+    border: none;
+    /* DEIN NEUER POINTER-CURSOR FÜR BUTTONS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+.btn:hover {
+    background-color: #106ebe; /* Dunkleres Blau beim Hover */
+    transform: translateY(-3px); /* Leichter "Lift"-Effekt */
+    box-shadow: 0 5px 15px rgba(0, 120, 215, 0.3);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 2px solid var(--secondary);
+    color: var(--secondary);
+    margin-left: 15px;
+    /* DEIN NEUER POINTER-CURSOR FÜR BUTTONS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+.btn-outline:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Spezifische Button-Stile für Zertifikate und Projekte */
+.certificate-btn, .project-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    /* margin-top wird für .project-btn durch auto überschrieben */
+    margin-top: 10px;
+    transition: var(--transition);
+    border: 2px solid var(--accent);
+    /* DEIN NEUER POINTER-CURSOR FÜR BUTTONS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+.certificate-btn:hover, .project-btn:hover {
+    background-color: white;
+    color: var(--accent);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 120, 215, 0.3);
+}
+
+/* Allgemeine Sektionen */
+section {
+    padding: 120px 5%; /* Vertikaler Abstand zwischen Sektionen */
+}
+
+.section-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 600;
+    margin-bottom: 60px;
+    text-align: center;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--accent);
+    margin: 20px auto 0;
+}
+
+/* Projekte-Sektion */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+    background-color: var(--secondary);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.project-image {
+    height: 200px;
+    background-color: var(--light-gray);
+    background-size: cover;
+    background-position: center;
+    transition: var(--transition);
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+}
+
+.project-info {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.project-info p {
+    color: var(--gray);
+    margin-bottom: 15px;
+    font-size: 15px;
+    flex-grow: 1;
+}
+
+/* Spezifische Anpassung für .project-btn, um ihn am unteren Rand zu fixieren */
+.project-btn {
+    display: inline-block;
+    padding: 8px 20px;
+    background-color: var(--accent);
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    margin-top: auto; /* DIES IST ENTSCHEIDEND, um den Button nach unten zu drücken */
+    transition: var(--transition);
+    border: 2px solid var(--accent);
+    cursor: url('img/pointer.png'), pointer;
+    align-self: flex-start; /* Stellt sicher, dass der Button links ausgerichtet ist */
+}
+
+/* Zertifikate-Sektion */
+.certificates-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.certificates-column, .badges-column {
+    flex: 1;
+    min-width: 280px;
+    background-color: white;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.certificate-item {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.certificate-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.certificate-item h4 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--accent);
+}
+
+.certificate-item p {
+    font-size: 14px;
+    color: var(--gray);
+    margin-bottom: 5px;
+}
+
+.badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.badge-item {
+    text-align: center;
+    background: var(--light-gray);
+    border-radius: 12px;
+    padding: 15px;
+    transition: var(--transition);
+}
+
+.badge-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.badge-item img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.badge-item p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+/* Profil-Buttons Stile */
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.profile-btn {
+    display: flex;
+    align-items: center;
+    padding: 12px 25px;
+    /* Angepasst: Weniger abgerundet für einen moderneren Look */
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transition);
+    /* Besserer Start-Schatten */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden; /* Wichtig für den Pseudo-Element-Glanz */
+    position: relative; /* Für den Pseudo-Element-Glanz */
+    z-index: 1; /* Für den Pseudo-Element-Glanz */
+    /* DEIN NEUER POINTER-CURSOR FÜR PROFIL-BUTTONS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+/* Verbesserter Hover-Effekt für alle Profil-Buttons */
+.profile-btn:hover {
+    transform: translateY(-5px) scale(1.03); /* Etwas stärker anheben und leicht vergrößern */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3); /* Stärkerer Schatten */
+}
+
+/* Pseudo-Element für den subtilen "Glanz"-Effekt beim Hover */
+.profile-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Ein subtiler Glanz von oben rechts nach unten links */
+    background: radial-gradient(circle at 100% 0%, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 2; /* Über dem Button-Hintergrund, aber unter Text/Logo */
+}
+
+.profile-btn:hover::before {
+    opacity: 1;
+}
+
+/* Angepasste Logo Größe */
+.btn-logo {
+    width: 24px;
+    height: 24px;
+    margin-right: 12px;
+}
+
+/* TryHackMe Button - Jetzt mit Gradient */
+.tryhackme {
+    background: linear-gradient(135deg, #212C42 0%, #182335 100%); /* Dunklerer Verlauf */
+    color: white;
+    border: none; /* Entfernt den festen Border zugunsten des Gradients */
+}
+
+/* MS Learn Button - Jetzt mit Gradient */
+.mslearn {
+    background: linear-gradient(135deg, #0078D4 0%, #0055A0 100%); /* Dunklerer Verlauf */
+    color: white;
+    border: none; /* Entfernt den festen Border zugunsten des Gradients */
+}
+
+/* About Section Styles (inklusive Skills) */
+.about-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+    padding: 0 20px;
+    align-items: flex-start; /* Spalten oben ausrichten */
+    flex-wrap: wrap;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+    padding: 20px;
+}
+
+.about-text p {
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+}
+
+/* --- SKILL BAR STYLES --- */
+.skills-area {
+    flex: 1;
+    min-width: 300px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.skills-area h3 {
+    font-size: 20px;
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+.skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.skill-name {
+    font-weight: 600;
+    color: #333;
+    font-size: 16px;
+    flex-basis: 150px;
+    flex-shrink: 0;
+}
+
+.progress-bar-track {
+    flex-grow: 1;
+    height: 10px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--accent);
+    border-radius: 5px;
+    transition: width 1.2s ease-out, opacity 0.8s ease-out;
+    opacity: 0;
+}
+
+.skill-percent {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--primary);
+    min-width: 40px;
+    text-align: right;
+    opacity: 0;
+    transition: opacity 0.5s ease-out 1s;
+}
+
+/* Scroll-Effekte (Allgemein) */
+.scroll-effect {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-effect.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.2s; }
+.delay-2 { transition-delay: 0.4s; }
+.delay-3 { transition-delay: 0.6s; }
+.delay-4 { transition-delay: 0.8s; }
+.delay-5 { transition-delay: 1.0s; }
+.delay-6 { transition-delay: 1.2s; }
+.delay-7 { transition-delay: 1.4s; }
+.delay-8 { transition-delay: 1.6s; }
+
+/* --- NEUE STYLES FÜR DEN UNTEREN BEREICH (KONTAKT & WÜRFEL NEBENEINANDER) --- */
+.bottom-sections-wrapper {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch auf kleineren Bildschirmen */
+    justify-content: center;
+    align-items: flex-start; /* Spalten oben ausrichten */
+    padding: 80px 5%; /* Vertikaler Abstand und seitliches Padding */
+    gap: 40px; /* Abstand zwischen den Spalten */
+    background-color: var(--light-gray); /* Hintergrund für den gesamten Wrapper */
+}
+
+#contact-info-project { /* Umbenannt von #contact-info, um spezifischer für Projektseite zu sein */
+    flex: 1; /* Erlaubt der Sektion zu wachsen */
+    min-width: 300px; /* Mindestbreite, bevor sie umbricht */
+    padding: 0; /* Padding ist im Wrapper definiert */
+    text-align: center;
+    background-color: transparent; /* Macht den Hintergrund transparent, da der Wrapper einen hat */
+}
+
+/* Anpassen der Standard-section-title und p Stile für contact-info-project */
+#contact-info-project .section-title {
+    margin-bottom: 30px; /* Überschreibt den Standardwert, um Abstand zu den Buttons zu schaffen */
+}
+#contact-info-project .section-title::after {
+    display: none; /* Entfernt die Linie unter dem Titel im Kontaktbereich */
+}
+
+#contact-info-project p {
+    color: var(--gray);
+    margin: 0 auto 40px; /* Zentriert den Text und gibt Abstand nach unten */
+    font-size: 16px; /* Standardgröße wiederherstellen */
+}
+
+#cube-animation-section-project { /* Umbenannt von #cube-animation-section, um spezifischer für Projektseite zu sein */
+    flex: 1; /* Erlaubt der Sektion zu wachsen */
+    min-width: 300px; /* Mindestbreite, bevor sie umbricht */
+    background-color: transparent; /* Hintergrund entfernt */
+    color: white;
+    display: flex; /* Um den Würfel im Inneren zu zentrieren */
+    justify-content: center;
+    align-items: center;
+    padding: 30px; /* Innenabstand um den Würfel */
+    border-radius: 18px;
+    box-shadow: none; /* Schatten entfernt, da kein Hintergrund mehr */
+    min-height: 600px; /* **WICHTIG: Höhe auf 600px erhöht, damit der Würfel ganz sichtbar ist** */
+    overflow: hidden; /* Wichtig, um die Animation innerhalb der Karte zu halten */
+}
+
+/* Responsive Anpassung für kleinere Bildschirme */
+@media (max-width: 768px) {
+    #cube-animation-section-project {
+        min-height: 450px; /* Kleinere Mindesthöhe auf mobilen Geräten anpassen, falls 600px zu viel ist */
+    }
+}
+
+#cube-animation-section-project .container {
+    position: relative;
+    transform: skewY(-20deg);
+    animation: animate 5s linear infinite;
+}
+
+#cube-animation-section-project .container .cube {
+    position: relative;
+    z-index: 2;
+}
+
+#cube-animation-section-project .container .cube:nth-child(2) {
+    z-index: 1;
+    transform: translate(-60px, -60px);
+}
+
+#cube-animation-section-project .container .cube:nth-child(3) {
+    z-index: 3;
+    transform: translate(60px, 60px);
+}
+
+#cube-animation-section-project .container .cube div {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    transform: translate(calc(-70px * var(--x)), calc(-60px * var(--y)));
+}
+
+#cube-animation-section-project .container .cube div span {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    background: #dcdcdc;
+    z-index: calc(1 * var(--i));
+    transition: 1.5s;
+    /* DEIN NEUER POINTER-CURSOR FÜR WÜRFEL-ELEMENTE */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+#cube-animation-section-project .container .cube div span:hover {
+    transition: 0s;
+    background: #00308a;
+    filter: drop-shadow(0 0 30px #00308a);
+}
+
+#cube-animation-section-project .container .cube div span:before {
+    content: "";
+    position: absolute;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #fff;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 1.5s;
+}
+
+#cube-animation-section-project .container .cube div span:after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    background: #f2f2f2;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 1.5s;
+}
+
+#cube-animation-section-project .container .cube div span:hover::before,
+#cube-animation-section-project .container .cube div span:hover::after {
+    transition: 0s;
+    background: #00308a;
+}
+/* --- ENDE NEUE STYLES FÜR DEN UNTEREN BEREICH --- */
+
+/* --- LOADER STYLES --- */
+/* From Uiverse.io by mobinkakeh - Angepasste Farben für Sichtbarkeit */
+.loader {
+    position: relative;
+    width: 108px;
+    height: 48px; /* Feste Höhe, um Größenänderungen zu verhindern */
+    display: flex;
+    justify-content: space-between;
+}
+.loader::after,
+.loader::before {
+    content: "";
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background-color: var(--secondary); /* Körper des Loaders ist jetzt weiß */
+    background-image: radial-gradient(circle 14px, #0d161b 100%, transparent 0); /* Augen des Loaders sind wieder dunkel (original) */
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    animation: eyeMove 10s infinite, blink 10s infinite;
+}
+@keyframes eyeMove {
+    0%,
+    10% {
+        background-position: 0px 0px;
+    }
+    13%,
+    40% {
+        background-position: -15px 0px;
+    }
+    43%,
+    70% {
+        background-position: 15px 0px;
+    }
+    73%,
+    90% {
+        background-position: 0px 15px;
+    }
+    93%,
+    100% {
+        background-position: 0px 0px;
+    }
+}
+@keyframes blink {
+    0%,
+    10%,
+    12%,
+    20%,
+    22%,
+    40%,
+    42%,
+    60%,
+    62%,
+    70%,
+    72%,
+    90%,
+    92%,
+    98%,
+    100% {
+        height: 48px;
+    }
+    11%,
+    21%,
+    41%,
+    61%,
+    71%,
+    91%,
+    99% {
+        height: 18px;
+    }
+}
+/* --- ENDE LOADER STYLES --- */
+
+/* Minimaler Footer (nur Copyright) */
+footer {
+    background-color: var(--light-gray);
+    padding: 30px 5%; /* Kleineres Padding als vorher */
+    text-align: center;
+}
+
+.copyright {
+    color: var(--gray);
+    font-size: 14px;
+    margin-top: 0; /* Kein zusätzlicher Abstand hier */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+    }
+
+    .hero {
+        padding: 80px 5%;
+        min-height: 80vh;
+    }
+
+    .hero h1 {
+        font-size: 2.8em;
+    }
+
+    .hero p {
+        font-size: 1.1em;
+    }
+
+    section {
+        padding: 80px 5%;
+    }
+
+    .section-title {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+
+    .about-container,
+    .certificates-container,
+    .bottom-sections-wrapper { /* WICHTIG: Wrapper wird jetzt gestapelt */
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .about-text, .skills-area,
+    .certificates-column, .badges-column,
+    #contact-info-project, #cube-animation-section-project { /* Alle Spalten werden volle Breite */
+        padding: 20px;
+        min-width: auto;
+    }
+
+    .badges-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    }
+
+    .btn-outline {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    #cube-animation-section-project {
+        min-height: 350px; /* Kleinere Mindesthöhe auf mobilen Geräten, kann bei Bedarf angepasst werden */
+    }
+    /* Loader auf kleineren Bildschirmen verstecken oder anpassen, falls er zu viel Platz einnimmt */
+    .header-left-items .loader {
+        transform: scale(0.8); /* Etwas kleiner machen */
+        transform-origin: center center; /* Skalierung vom Zentrum aus */
+    }
+}
+
+@media (max-width: 600px) {
+    .profile-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .profile-btn {
+        width: 100%;
+        max-width: 280px;
+        justify-content: center;
+    }
+    .hero .btn {
+        width: 100%;
+        max-width: 250px;
+        margin: 10px auto;
+    }
+    .btn-outline {
+        margin-left: auto;
+    }
+
+    .skill-name {
+        flex-basis: 100%;
+        text-align: left;
+    }
+    .progress-bar-track, .skill-percent {
+        flex-basis: auto;
+    }
+}
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: var(--light-gray);
+    padding: 30px 5%;
+    text-align: center; /* Standardmäßig zentriert, kann aber durch Flexbox überschrieben werden */
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column; /* Standardmäßig vertikal auf kleinen Bildschirmen */
+    align-items: center;
+    gap: 15px; /* Abstand zwischen Copyright und Links */
+    max-width: 1200px; /* Optional: Maximale Breite für den Inhalt */
+    margin: 0 auto; /* Zentriert den Inhalt */
+}
+
+.copyright {
+    color: var(--gray);
+    font-size: 14px;
+    margin: 0; /* Entfernt Standard-Margin */
+}
+
+.footer-links {
+    display: flex;
+    gap: 20px; /* Abstand zwischen den Links */
+    flex-wrap: wrap; /* Erlaubt Umbruch der Links */
+    justify-content: center; /* Zentriert Links, wenn sie umbrechen */
+}
+
+.footer-links a {
+    color: var(--gray); /* Farbe der Links im Footer */
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    /* DEIN NEUER POINTER-CURSOR FÜR LINKS */
+    cursor: url('img/pointer.png'), pointer;
+}
+
+.footer-links a:hover {
+    color: var(--accent); /* Akzentfarbe beim Hover */
+}
+
+/* Responsive Anpassung für den Footer */
+@media (min-width: 768px) {
+    .footer-content {
+        flex-direction: row; /* Horizontal auf größeren Bildschirmen */
+        justify-content: space-between; /* Copyright links, Links rechts */
+    }
+}
+
+/* Impressum spezifische Stile */
+.impressum-section {
+    padding-top: 150px; /* Mehr Platz oben, um den Header zu berücksichtigen */
+    padding-bottom: 80px;
+    background-color: var(--secondary); /* Oder eine andere helle Farbe */
+}
+
+.impressum-details {
+    max-width: 800px; /* Begrenzt die Breite für bessere Lesbarkeit */
+    margin: 0 auto; /* Zentriert den Inhalt */
+    padding: 40px; /* Innenabstand im Impressums-Container */
+    background-color: #fff; /* Heller Hintergrund für den Inhaltsblock */
+    border-radius: 12px; /* Leicht abgerundete Ecken */
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08); /* Dezenter Schatten */
+    line-height: 1.8; /* Erhöhter Zeilenabstand für bessere Lesbarkeit */
+    color: var(--primary); /* Sicherstellen, dass der Text schwarz ist */
+}
+
+.impressum-details h2 {
+    font-size: 24px;
+    margin-top: 35px; /* Abstand vor den Überschriften */
+    margin-bottom: 15px;
+    color: var(--accent); /* Akzentfarbe für Überschriften */
+    border-bottom: 2px solid rgba(0, 120, 215, 0.2); /* Dezente Unterlinie */
+    padding-bottom: 8px; /* Abstand zwischen Text und Linie */
+}
+
+.impressum-details ul {
+    list-style: none; /* Entfernt Standard-Listenpunkte */
+    padding-left: 0; /* Entfernt Standard-Padding */
+    margin-bottom: 25px; /* Abstand nach der Liste */
+}
+
+.impressum-details ul li {
+    margin-bottom: 10px; /* Abstand zwischen Listenelementen */
+    font-size: 16px;
+    color: var(--gray); /* Leichtere Farbe für Listentext */
+}
+
+.impressum-details ul li strong {
+    color: var(--primary); /* Wichtige Wörter dunkler */
+}
+
+.impressum-details p {
+    margin-bottom: 20px; /* Abstand zwischen Absätzen */
+    font-size: 15px;
+    color: var(--gray); /* Standardtextfarbe */
+}
+
+/* Spezielle Stile für GitHub-Hinweis */
+.impressum-details .github-heading {
+    color: #24292e; /* GitHub dunkles Grau */
+    border-color: rgba(36, 41, 46, 0.2);
+}
+
+.impressum-details .github-info {
+    font-size: 14px;
+    color: #555;
+    background-color: #f7f7f7;
+    border-left: 4px solid #b3e0ff; /* Ein blauer Streifen als Highlight */
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 25px;
+}
+
+.impressum-details a {
+    color: var(--accent); /* Links in Akzentfarbe */
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    cursor: url('img/pointer.png'), pointer;
+}
+
+.impressum-details a:hover {
+    color: #106ebe; /* Dunkleres Blau beim Hover */
+}
+
+/* Anpassung des Footers für den Impressum-Link */
+header nav ul li:last-child {
+    margin-left: 30px; /* Stelle sicher, dass der letzte Link auch Abstand hat */
+}
+
+/* --- Neue CSS für das Zwei-Spalten-Layout im Projektbereich --- */
+
+.project-two-column-grid {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt Umbruch auf kleineren Bildschirmen */
+    gap: 40px; /* Abstand zwischen den Spalten */
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.motivation-column,
+.parts-column {
+    flex: 1; /* Nimmt gleichen Platz ein */
+    min-width: 300px; /* Mindestbreite, bevor sie umbrechen */
+    padding: 25px;
+    background-color: var(--secondary); /* Oder ein leicht abweichendes Weiß/Grau */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06); /* Dezenterer Schatten */
+}
+
+.motivation-column h3,
+.parts-column h3 {
+    font-size: 22px;
+    color: var(--accent); /* Oder eine andere Farbe für Unterüberschriften */
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(0, 120, 215, 0.1);
+    padding-bottom: 10px;
+}
+
+.motivation-column p,
+.parts-column p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+    color: var(--gray);
+}
+
+.parts-column ul {
+    list-style: none; /* Entfernt Standard-Listenpunkte */
+    padding-left: 0;
+}
+
+.parts-column ul li {
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="var(--accent)"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>') no-repeat left center;
+    background-size: 16px;
+    padding-left: 25px; /* Platz für das Icon */
+    margin-bottom: 10px;
+    color: var(--primary); /* Oder eine dunklere Farbe */
+}
+
+/* Anpassung für kleinere Bildschirme: Spalten stapeln sich */
+@media (max-width: 768px) {
+    .project-two-column-grid {
+        flex-direction: column;
+        gap: 30px; /* Etwas weniger Abstand, wenn gestapelt */
+    }
+}
+
+/* Anpassung der bestehenden .project-content-grid, falls sie an anderer Stelle noch genutzt wird */
+/* Wenn du keine andere .project-content-grid mehr hast, kannst du diese Regel löschen */
+/* Oder anpassen, falls sie für andere Layouts weiterhin sinnvoll ist */
+.project-content-grid { /* Wenn sie im Hero-Bereich noch existiert, wäre das hier für die Projekt-Seite. */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    align-items: center; /* Zentriert Inhalte vertikal, wenn Spalten ungleich hoch sind */
+}
+
+.project-content-grid .text-block,
+.project-content-grid .image-block {
+    flex: 1;
+    min-width: 300px; /* Damit sie auf kleineren Bildschirmen umbrechen */
+}
+
+/* WICHTIG: Die Klasse .project-hero-image muss auch in der CSS definiert werden, wenn du sie nutzen möchtest */
+.project-hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6) blur(2px); /* Verdunkelt und weichgezeichnet */
+    z-index: -1; /* Hinter dem Inhalt */
+    border-radius: 0; /* Keine Ecken wie bei Sektionen */
+}
+
+/* --- Anpassung für die Galerie (Wichtig für Einheitlichkeit) --- */
+/* Horizontal Gallery Container */
+.components-horizontal-gallery {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    gap: 20px;
+    padding-bottom: 20px;
+    margin-top: 30px;
+    padding-left: 5%;
+    padding-right: 5%;
+    box-sizing: border-box;
+
+    /* Scrollbar Styling (Webkit - Chrome, Safari, Edge) */
+    &::-webkit-scrollbar {
+        height: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: var(--light-gray);
+        border-radius: 10px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--accent);
+        border-radius: 10px;
+        border: 2px solid var(--light-gray);
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        background: #0056b3;
+    }
+
+    /* Firefox Scrollbar Styling */
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent) var(--light-gray);
+}
+
+/* Einzelnes Element in der horizontalen Galerie */
+.gallery-item-horizontal {
+    flex-shrink: 0; /* Verhindert das Schrumpfen */
+    width: 280px; /* Feste Breite für jedes Element */
+    background-color: var(--secondary);
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer; /* Zeigt an, dass es klickbar ist */
+}
+
+.gallery-item-horizontal:hover {
+    transform: translateY(-5px);
+}
+
+/* BILD in der horizontalen Galerie (WICHTIG für Einheitlichkeit) */
+.gallery-item-horizontal img {
+    width: 100%; /* Bild nimmt die gesamte Breite des Containers ein */
+    height: 180px; /* Feste Höhe für alle Bilder in der horizontalen Galerie */
+    object-fit: cover; /* Schneidet das Bild zu, um den Bereich auszufüllen, ohne es zu verzerren */
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.gallery-item-horizontal p {
+    padding: 15px;
+    font-size: 15px;
+    text-align: center;
+    color: var(--primary);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Vertikale Galerie-Ansicht (wenn vorhanden) */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Einzelnes Element in der vertikalen Galerie */
+.gallery-item {
+    background-color: var(--secondary);
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Zeigt an, dass es klickbar ist */
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+/* BILD in der vertikalen Galerie (WICHTIG für Einheitlichkeit) */
+.gallery-item img {
+    width: 100%; /* Bild nimmt die gesamte Breite des Containers ein */
+    height: 200px; /* Feste Höhe für alle Bilder in der vertikalen Galerie */
+    object-fit: cover; /* Schneidet das Bild zu, um den Bereich auszufüllen, ohne es zu verzerren */
+    display: block;
+}
+
+.video-section {
+    margin-top: 60px;
+    text-align: center;
+}
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Seitenverhältnis */
+    height: 0;
+    overflow: hidden;
+    max-width: 800px; /* Max. Breite für das Video */
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Technische Details */
+.tech-specs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.tech-spec-item {
+    background-color: var(--secondary);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.tech-spec-item h4 {
+    font-size: 20px;
+    color: var(--primary);
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.tech-spec-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.tech-spec-item ul li {
+    font-size: 15px;
+    margin-bottom: 8px;
+    color: var(--gray);
+    position: relative;
+    padding-left: 20px;
+}
+
+.tech-spec-item ul li::before {
+    content: '•'; /* Einfacher Punkt */
+    color: var(--accent); /* Farbe des Punktes */
+    position: absolute;
+    left: 0;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.github-link-block {
+    text-align: center;
+    margin-top: 50px;
+    padding: 30px;
+    background-color: var(--secondary); /* Hintergrundfarbe für den Block */
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.github-link-block p {
+    font-size: 17px;
+    margin-bottom: 25px;
+    color: var(--primary);
+}
+
+/* --- Lightbox Styles --- */
+#lightbox-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Dunkler, leicht transparenter Hintergrund */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Stellt sicher, dass die Lightbox über allem liegt */
+    visibility: hidden; /* Standardmäßig unsichtbar */
+    opacity: 0; /* Standardmäßig transparent */
+    transition: visibility 0.3s, opacity 0.3s ease-in-out;
+}
+
+#lightbox-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+#lightbox-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background-color: var(--secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.8); /* Startet kleiner für Animation */
+    transition: transform 0.3s ease-in-out;
+}
+
+#lightbox-overlay.active #lightbox-content {
+    transform: scale(1); /* Wächst zur Normalgröße an */
+}
+
+#lightbox-img {
+    max-width: 100%;
+    max-height: calc(90vh - 80px); /* Bildschirmhöhe minus Platz für Caption und Padding */
+    display: block;
+    margin: 0 auto 15px; /* Zentriert Bild und gibt Abstand zur Caption */
+    border-radius: 4px;
+}
+
+#lightbox-caption {
+    color: var(--primary);
+    text-align: center;
+    font-size: 1.1em;
+    margin-top: 10px;
+    word-wrap: break-word; /* Stellt sicher, dass lange Texte umbrechen */
+    max-height: 50px; /* Begrenzt die Höhe der Bildunterschrift */
+    overflow: auto; /* Scrollbar, wenn Bildunterschrift zu lang */
+}
+
+#lightbox-close-btn {
+    position: absolute;
+    top: -15px; /* Etwas außerhalb des Rahmens */
+    right: -15px; /* Etwas außerhalb des Rahmens */
+    background-color: var(--accent);
+    color: var(--secondary);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.2s ease;
+    z-index: 1001; /* Über dem Bild */
+}
+
+#lightbox-close-btn:hover {
+    background-color: #e04400; /* Dunklerer Akzent beim Hover */
+}
+
+/* Optional: Verhindert Scrollen des Hauptinhalts, wenn Lightbox offen ist */
+body.no-scroll {
+    overflow: hidden;
+}
+
+/* Anpassung der img innerhalb der a-Tags in den Galerien */
+.gallery-item a,
+.gallery-item-horizontal a {
+    text-decoration: none; /* Entfernt die Unterstreichung von Links */
+    color: inherit; /* Vererbt die Textfarbe */
+    display: block; /* Macht den gesamten Bereich klickbar */
+    height: 100%; /* Füllt den Elterncontainer aus */
+}
+
+/* Wenn dein P-Tag innerhalb des A-Tags ist, musst du auch das stylen */
+.gallery-item p,
+.gallery-item-horizontal p {
+    color: var(--primary); /* Stellt sicher, dass der Text sichtbar ist */
+    margin-top: 10px;
+}
+
+/* CONTAINER FÜR DIE PROFIL-CARDS */
+/* Dies ist der neue Container, der die Cards nebeneinander und zentriert */
+/* positioniert und den Abstand zu den oberen Sektionen regelt. */
+.profile-cards-container {
+    display: flex; /* Macht die Cards nebeneinander */
+    flex-wrap: wrap; /* Erlaubt den Cards, in die nächste Zeile zu springen, wenn der Platz nicht reicht */
+    gap: 30px; /* Abstand zwischen den Cards. Habe dies etwas erhöht, da die Cards größer sind. */
+    justify-content: center; /* Zentriert die Cards horizontal */
+    margin-top: 50px; /* Abstand nach oben zu den Zertifikaten/Badges */
+    padding: 0 20px; /* Etwas Polsterung an den Seiten für kleinere Bildschirme */
+}
+
+/* From Uiverse.io by Javierrocadev */
+.card {
+  /* Breite und Höhe müssen flexibler sein, damit sie nebeneinander passen. */
+  /* Oder du definierst eine feste Breite und der Container kümmert sich um den Abstand. */
+  /* Ich behalte die Breite bei, da der Uiverse.io Effekt darauf basiert. */
+  width: 350px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+  background-color: #fffffe;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  /* Füge einen kleinen Schatten hinzu, damit sie sich besser abheben */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.card::before {
+  content: "";
+  /* Breite bleibt 350px, da der Effekt sich auf die volle Breite bezieht */
+  width: 350px;
+  height: 100px;
+  position: absolute;
+  top: 0;
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  border-bottom: 3px solid #fefefe;
+  /* TryHackMe Farbverlauf - bereits angepasst */
+  background: linear-gradient(40deg, #1C1E36 0%, #E74694 50%, #50C0C9 100%);
+  transition: all 0.3s ease;
+}
+
+.card * {
+  z-index: 1;
+}
+
+.image {
+  width: 90px;
+  height: 90px;
+  /* Hintergrundfarbe entfernen oder durch transparente Farbe ersetzen, wenn Bilder verwendet werden */
+  /* background-color: #1468BF; */ /* Dies überschreibt deine Bilder, wenn sie gesetzt sind */
+  background-color: transparent; /* Macht den Standardhintergrund transparent */
+  border-radius: 50%;
+  border: 4px solid #fefefe;
+  margin-top: 30px;
+  transition: all 0.5s ease;
+  /* Bilder innerhalb des Kreises zentrieren und anpassen */
+  background-size: contain; /* Oder 'cover', je nachdem wie du die Bilder skalieren möchtest */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Spezifische Bildstile für jede Card */
+/* Füge diese IDs zu deinen HTML-Cards hinzu: <div class="card" id="tryhackme-card"> */
+#tryhackme-card .image {
+    background-image: url('img/thm-logo.png'); /* Passe den Pfad bei Bedarf an */
+}
+
+#mslearn-card .image {
+    background-image: url('img/Microsoft_logo.svg.png'); /* Passe den Pfad bei Bedarf an */
+    /* Da das MS-Logo oft einen weißen Hintergrund hat, kann dieser hier gesetzt werden */
+    background-color: white;
+}
+
+
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  transition: all 0.5s ease;
+}
+
+.card-info span {
+  font-weight: 600;
+  font-size: 24px;
+  color: #161A42; /* Dunkler Text */
+  margin-top: 15px;
+  line-height: 5px; /* Dies ist sehr klein, evtl. anpassen, wenn Text überlappt */
+}
+
+.card-info p {
+  color: rgba(0, 0, 0, 0.5); /* Grauer Text für Beschreibung */
+}
+
+.button {
+  text-decoration: none;
+  background-color: #1468BF; /* Blauer Button-Hintergrund */
+  color: white;
+  padding: 5px 20px;
+  border-radius: 5px;
+  border: 1px solid white;
+  transition: all 0.5s ease;
+}
+
+/* Hover-Effekte vom Uiverse.io-Beispiel */
+.card:hover {
+  width: 300px; /* Die Breite wird auf Hover reduziert */
+  border-radius: 250px;
+}
+
+.card:hover::before {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border-bottom: none;
+  transform: scale(0.95);
+}
+
+.card:hover .card-info {
+  transform: translate(0%,-15%);
+}
+
+.button:hover {
+  background-color: #FF6844; /* Orange auf Hover */
+  transform: scale(1.1);
+}
+
+/* Responsivität für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .card {
+        width: 100%; /* Auf kleineren Bildschirmen die volle Breite einnehmen */
+        max-width: 350px; /* Aber nicht größer als die ursprüngliche Max-Breite */
+    }
+    .card::before {
+        width: 100%; /* Auch hier die volle Breite des Elternelements */
+    }
+    .card:hover {
+        width: calc(100% - 50px); /* Damit noch Platz für den Hover-Effekt ist */
+        border-radius: 15px; /* Weniger runde Ecken im Hover, da 250px bei kleinen Breiten komisch aussieht */
+    }
+    .card:hover::before {
+        width: calc(100% - 50px);
+        height: auto; /* Höhe anpassen, um Proportionen zu wahren */
+        border-radius: 15px; /* Auch hier weniger runde Ecken */
+    }
+}
+
+/* Container für die gesamte Badges-Spalte */
+.badges-column {
+    /* Beispielbreite, an dein Layout anpassen */
+    width: 100%;
+    /* Füge hier deine weiteren Styling-Regeln für die Spalte hinzu (z.B. padding, background) */
+}
+
+/* Überschrift der Badges-Sektion */
+.badges-column h3 {
+    text-align: left; /* Zentriert die Überschrift */
+    margin-bottom: 20px; /* Abstand nach unten */
+    color: #333; /* Beispiel: Farbe anpassen */
+}
+
+/* Der neue Scroll-Container für die Badges */
+.badges-scroll-container {
+    max-height: 400px; /* **Wichtig:** Maximale Höhe festlegen, ab der gescrollt wird */
+    overflow-y: auto; /* Aktiviert vertikales Scrollen, wenn Inhalt über max-height hinausgeht */
+    padding-right: 15px; /* Platz für die Scrollbar, damit der Inhalt nicht verdeckt wird */
+    display: grid; /* Verwendet CSS Grid für die Anordnung der Badges */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsives Grid */
+    gap: 20px; /* Abstand zwischen den Badge-Elementen */
+    justify-content: center; /* Zentriert die Badges im Container, wenn nicht alle Reihen voll sind */
+    align-items: start; /* Richtet Elemente am oberen Rand aus */
+
+    /* Optional: Styling für die Scrollbar (nur Webkit-Browser) */
+    scrollbar-width: thin; /* Firefox */
+    scrollbar-color: #888 #f1f1f1; /* Firefox (Thumb / Track) */
+}
+
+/* Webkit-Scrollbar-Styling */
+.badges-scroll-container::-webkit-scrollbar {
+    width: 8px; /* Breite der Scrollbar */
+}
+
+.badges-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Hintergrund der Scrollbar-Spur */
+    border-radius: 10px;
+}
+
+.badges-scroll-container::-webkit-scrollbar-thumb {
+    background: #888; /* Farbe des Scroll-Balkens */
+    border-radius: 10px;
+}
+
+.badges-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Farbe des Scroll-Balkens beim Hover */
+}
+
+/* Einzelnes Badge-Item */
+.badge-item {
+    display: flex;
+    flex-direction: column; /* Bild und Text untereinander */
+    align-items: center; /* Zentriert Bild und Text horizontal */
+    text-align: center; /* Textzentrierung */
+    padding: 15px;
+    border: 1px solid #eee; /* Leichte Umrandung */
+    border-radius: 8px;
+    background-color: #fff; /* Weißer Hintergrund */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Leichter Schatten */
+    transition: transform 0.2s ease-in-out; /* Kleiner Hover-Effekt */
+}
+
+.badge-item:hover {
+    transform: translateY(-5px); /* Beim Hover leicht anheben */
+}
+
+.badge-item img {
+    max-width: 60px; /* Größe der Badge-Bilder anpassen */
+    height: auto;
+    margin-bottom: 10px; /* Abstand zwischen Bild und Text */
+}
+
+.badge-item p {
+    font-size: 0.9em; /* Kleinere Schrift für die Beschreibung */
+    color: #555;
+    margin: 0; /* Entfernt Standard-Margin des Paragraphs */
+}
+
+/* Responsivität für kleinere Bildschirme (optional, aber empfohlen) */
+@media (max-width: 768px) {
+    .badges-scroll-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Kleinere Spalten auf kleineren Screens */
+        max-height: 350px; /* Evtl. Höhe auf kleineren Screens anpassen */
+    }
+}
+
+@media (max-width: 480px) {
+    .badges-scroll-container {
+        grid-template-columns: 1fr; /* Eine Spalte auf sehr kleinen Screens */
+        max-height: 300px; /* Evtl. Höhe auf sehr kleinen Screens anpassen */
+    }
+    .badge-item img {
+        max-width: 60px; /* Noch kleinere Bilder */
+    }
+}
+
+/* Container für die Badges */
+.badges-scroll-container {
+    display: flex; /* Aktiviert Flexbox */
+    flex-wrap: wrap; /* Ermöglicht das Umbrechen der Elemente in die nächste Reihe */
+    gap: 20px; /* Abstand zwischen den Badges */
+    justify-content: center; /* Zentriert die Badges horizontal */
+    padding: 20px; /* Innenabstand für den Container */
+    /* Optional: Max-Breite für den Container, um die Anzahl der Reihen zu steuern */
+    max-width: 1200px; /* Beispielbreite, passe sie an dein Layout an */
+    margin: 0 auto; /* Zentriert den Container auf der Seite */
+}
+
+/* Einzelner Badge-Container */
+.badge-item {
+    flex: 1 1 calc(33.333% - 20px); /* Nimmt 1/3 der Breite ein, minus Gap */
+    max-width: calc(33.333% - 20px); /* Stellt sicher, dass maximal 3 Badges pro Reihe sind */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Zentriert Inhalt (Bild und Text) */
+    text-align: center; /* Zentriert Text */
+    background-color: #f8f8f8; /* Leichter Hintergrund für die Badges */
+    border-radius: 8px; /* Abgerundete Ecken */
+    padding: 15px; /* Innenabstand */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Leichter Schatten für Tiefe */
+    transition: transform 0.2s ease-in-out; /* Sanfter Übergang beim Hover */
+    min-width: 180px; /* Minimale Breite für kleine Bildschirme */
+}
+
+.badge-item:hover {
+    transform: translateY(-5px); /* Kleiner "Lift"-Effekt beim Hover */
+}
+
+.badge-item img {
+    max-width: 100px; /* Maximale Breite für die Badge-Bilder */
+    height: auto; /* Höhe automatisch anpassen */
+    margin-bottom: 10px; /* Abstand zwischen Bild und Text */
+}
+
+.badge-item p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Responsive Anpassungen für kleinere Bildschirme */
+@media (max-width: 992px) { /* Tablet-Größe */
+    .badge-item {
+        flex: 1 1 calc(50% - 20px); /* 2 Badges pro Reihe */
+        max-width: calc(50% - 20px);
+    }
+}
+
+@media (max-width: 768px) { /* Kleinere Tablets/Handys */
+    .badge-item {
+        flex: 1 1 100%; /* 1 Badge pro Reihe */
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Über uns</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="public/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="public/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="public/img/favicons/safari-pinned-tab.svg" color="#FFF303"> <meta name="msapplication-TileColor" content="#FFF303"> <meta name="theme-color" content="#ffffff"> <link rel="icon" type="image/x-icon" href="public/img/favicons/favicon.ico">
+
+
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taxiYellow: '#FFF399',      // Your primary taxi yellow
+                        taxiYellowHeader: '#FFF303', // Your header yellow
+                    },
+                    fontFamily: {
+                        gruppo: ['Gruppo', 'sans-serif'], // Your custom font
+                    }
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+
+<body class="bg-[#fff399] text-gray-900 font-gruppo">
+    <header class="fixed top-0 left-0 w-full bg-taxiYellowHeader border-b border-gray-200 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html#home" class="inline-block" data-aos="fade-in" data-aos-duration="1000">
+                <img src="public/img/logo.png" alt="deintaxi Logo" class="relative h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-8 text-black text-sm" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+                <a href="index.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Home</a>
+                <a href="index.html#services" class="text-l font-semibold hover:text-black transition hover:scale-110">Leistungen</a>
+                <a href="vehicles.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Fahrzeuge</a>
+                <a href="ueber-uns.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Über uns</a>
+                <a href="index.html#contact" class="text-l font-semibold hover:text-black transition hover:scale-110">Kontakt</a>
+            </nav>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div
+            x-show="mobileMenuOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="md:hidden bg-taxiYellowHeader shadow-lg"
+        >
+            <div class="px-6 py-4 space-y-4 flex flex-col">
+                <a @click="mobileMenuOpen = false" href="index.html" class="text-xl text-black hover:font-bold transition py-2">Home</a>
+                <a @click="mobileMenuOpen = false" href="index.html#services" class="text-xl text-black hover:font-bold transition py-2">Leistungen</a>
+                <a @click="mobileMenuOpen = false" href="vehicles.html" class="text-xl text-black hover:font-bold transition py-2">Fahrzeuge</a>
+                <a @click="mobileMenuOpen = false" href="ueber-uns.html" class="text-xl text-black hover:font-bold transition py-2">Über uns</a>
+                <a @click="mobileMenuOpen = false" href="index.html#contact" class="text-xl text-black hover:font-bold transition py-2">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section
+            id="home"
+            class="relative text-center px-6 min-h-[calc(100vh-80px)] text-white font-gruppo overflow-hidden flex items-center justify-center"
+            x-data="{ images: ['public/img/PP9.jpg', 'public/img/PP2.jpg', 'public/img/PP3.jpg', 'public/img/PP7.jpg'], active: 0 }"
+            x-init="setInterval(() => active = (active + 1) % images.length, 5000)"
+        >
+            <template x-for="(image, index) in images" :key="index">
+                <div
+                    x-show="active === index"
+                    x-transition:enter="transition-all ease-in-out duration-1000"
+                    x-transition:enter-start="opacity-0 scale-110"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition-all ease-in-out duration-1000"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="absolute inset-0 bg-center bg-cover z-0 transform-gpu"
+                    :style="`background-image: url('${image}');`"
+                ></div>
+            </template>
+
+            <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+            <div class="relative z-10 w-full py-20" data-aos="fade-in" data-aos-duration="1200">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-gruppo mb-6" data-aos="fade-up" data-aos-duration="800">
+                        Über uns
+                    </h1>
+                    <p class="max-w-xl mx-auto mb-10 text-xl md:text-2xl" data-aos="fade-up" data-aos-duration="700">
+                        sicher ● pünktlich ● zuverlässig <br>rund um die Uhr für Sie unterwegs.<br>
+                        <strong class="text-taxi-yellow text-2xl md:text-3xl"> Ihre Nr.1 in Musterstadt ! </strong>
+                    </p>
+
+                    <div class="relative z-50" data-aos="fade-up" data-aos-duration="900">
+                <a href="tel:+49123456789" class="button-link">    
+                        <button class="button">
+                    <div class="bg"></div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 342 208"
+                        height="208"
+                        width="342"
+                        class="splash"
+                    >
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M54.1054 99.7837C54.1054 99.7837 40.0984 90.7874 26.6893 97.6362C13.2802 104.485 1.5 97.6362 1.5 97.6362"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M285.273 99.7841C285.273 99.7841 299.28 90.7879 312.689 97.6367C326.098 104.486 340.105 95.4893 340.105 95.4893"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M281.133 64.9917C281.133 64.9917 287.96 49.8089 302.934 48.2295C317.908 46.6501 319.712 36.5272 319.712 36.5272"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M281.133 138.984C281.133 138.984 287.96 154.167 302.934 155.746C317.908 157.326 319.712 167.449 319.712 167.449"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M230.578 57.4476C230.578 57.4476 225.785 41.5051 236.061 30.4998C246.337 19.4945 244.686 12.9998 244.686 12.9998"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M230.578 150.528C230.578 150.528 225.785 166.471 236.061 177.476C246.337 188.481 244.686 194.976 244.686 194.976"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M170.392 57.0278C170.392 57.0278 173.89 42.1322 169.571 29.54C165.252 16.9478 168.751 2.05227 168.751 2.05227"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M170.392 150.948C170.392 150.948 173.89 165.844 169.571 178.436C165.252 191.028 168.751 205.924 168.751 205.924"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M112.609 57.4476C112.609 57.4476 117.401 41.5051 107.125 30.4998C96.8492 19.4945 98.5 12.9998 98.5 12.9998"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M112.609 150.528C112.609 150.528 117.401 166.471 107.125 177.476C96.8492 188.481 98.5 194.976 98.5 194.976"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M62.2941 64.9917C62.2941 64.9917 55.4671 49.8089 40.4932 48.2295C25.5194 46.6501 23.7159 36.5272 23.7159 36.5272"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M62.2941 145.984C62.2941 145.984 55.4671 161.167 40.4932 162.746C25.5194 164.326 23.7159 174.449 23.7159 174.449"
+                        ></path>
+                    </svg>
+
+                    <div class="wrap">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 221 42"
+                        height="42"
+                        width="221"
+                        class="path"
+                        >
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="3"
+                            d="M182.674 2H203C211.837 2 219 9.16344 219 18V24C219 32.8366 211.837 40 203 40H18C9.16345 40 2 32.8366 2 24V18C2 9.16344 9.16344 2 18 2H47.8855"
+                        ></path>
+                        </svg>
+
+                        <div class="outline"></div>
+                        <div class="content">
+                        <span class="char state-1">
+                            <span data-label="A" style="--i: 1">A</span>
+                            <span data-label="n" style="--i: 2">n</span>
+                            <span data-label="r" style="--i: 3">r</span>
+                            <span data-label="u" style="--i: 4">u</span>
+                            <span data-label="f" style="--i: 5">f</span>
+                            <span data-label="e" style="--i: 6">e</span>
+                            <span data-label="n" style="--i: 7">n</span>
+                        </span>
+
+                        <div class="icon">
+                            <div></div>
+                        </div>
+
+                        <span class="char state-2">
+                            <span data-label="A" style="--i: 1">A</span>
+                            <span data-label="n" style="--i: 2">n</span>
+                            <span data-label="r" style="--i: 3">r</span>
+                            <span data-label="u" style="--i: 4">u</span>
+                            <span data-label="f" style="--i: 5">f</span>
+                            <span data-label="e" style="--i: 6">e</span>
+                            <span data-label="n" style="--i: 7">n</span>
+                        </span>
+                        </div>
+                    </div>
+                    </button>
+                </a>    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-[#e6e6e6]">
+            <div class="mx-auto w-screen max-w-screen-xl px-4 py-16 sm:px-6 sm:py-24 lg:px-8 lg:py-32">
+                <div class="lg:flex lg:items-center lg:gap-8">
+                    <div class="lg:w-1/2" data-aos="fade-right" data-aos-duration="1000">
+                        <div class="mx-auto max-w-prose text-left">
+                            <h2 class="text-4xl font-bold font-gruppo text-gray-900 sm:text-5xl">
+                                Über uns<br>
+                                <strong class="text-[#FFF303]"> dein taxi</strong>
+                            </h2>
+
+                            <p class="mt-4 text-base font-semibold text-pretty text-gray-700 sm:text-lg/relaxed">
+                                Wir sind ein junges Taxi Unternehmen mit hoch qualifizierten Fahrer: innen und großen Ambitionen.
+                                <br>Unser Slogan:<br> sicher, pünktlich, zuverlässig ist unser Versprechen an dich. Unser großes Ziel, ist es unseren Kunden den besten Service zu bieten.
+
+
+                            </p>
+
+                            <div class="mt-4 flex justify-left sm:mt-6" data-aos="fade-right" data-aos-delay="400">
+                                <a href="#contact"
+                                class="inline-flex items-left gap-4 rounded-lg border border-taxiYellowHeader bg-[#fff399] px-6 py-3 transition-all duration-300
+                                        hover:border-[#fff399] hover:bg-[#fff303] hover:text-black hover:scale-105 shadow-lg
+                                        focus:outline-none focus:ring-2 focus:ring-taxiYellowHeader focus:ring-opacity-75">
+
+                                    <span class="font-bold text-black text-lg">
+                                        Termin anfragen!
+                                    </span>
+
+                                    <span class="shrink-0 rounded-full border border-current animate-bounce bg-black p-2 text-taxiYellowHeader">
+                                        <svg
+                                            class="size-4"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                        >
+                                            <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M19 9l-7 7-7-7"
+                                            />
+                                        </svg>
+                                    </span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12 lg:mt-0 lg:w-1/2" data-aos="fade-left" data-aos-duration="1000">
+                        <div class="relative group">
+                            <div class="absolute -inset-4 bg-gradient-to-r from-taxi-yellow/40 to-gray-900/20 rounded-2xl opacity-25 blur-lg group-hover:opacity-40 transition-all duration-500"></div>
+
+                            <div class="relative overflow-hidden rounded-xl shadow-xl border-8 border-white/90 transform transition-all duration-500 hover:scale-[1.02]">
+                                <video
+                                    autoplay
+                                    loop
+                                    muted
+                                    playsinline
+                                    preload="auto"
+                                    class="w-full h-auto object-cover transform transition-all duration-700 group-hover:scale-105"
+                                >
+                                    <source src="public/img/TT5.mp4" type="video/mp4">
+                                    Dein Browser unterstützt das Video-Tag nicht.
+                                </video>
+
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-transparent"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="why-choose-us" class="py-16 md:py-24 bg-gray-700 text-white">
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12 md:mb-20" data-aos="fade-up">
+            <h2 class="text-4xl sm:text-5xl lg:text-6xl font-gruppo font-bold leading-tight">
+                Warum uns <span class="text-taxiYellowHeader">wählen</span>?
+            </h2>
+            <p class="mt-4 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto font-gruppo">
+                Wir legen Wert auf Qualität, Sicherheit und Ihren Komfort. Hier sind die Gründe, warum dein taxi Ihr idealer Partner ist.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+
+            <div class="bg-gray-700 rounded-xl shadow-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-taxiYellowHeader mb-6">
+                    <i class="fa-solid fa-clock text-5xl"></i> </div>
+                <h3 class="text-3xl font-bold font-gruppo mb-4">pünktlich & zuverlässig</h3>
+                <p class="text-gray-300 text-base leading-relaxed font-gruppo">
+                    Ihre Zeit ist wertvoll. Wir garantieren pünktliche Ankunft und sichere Fahrt, damit Sie Ihre Termine stressfrei erreichen.
+                </p>
+            </div>
+
+            <div class="bg-gray-700 rounded-xl shadow-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-taxiYellowHeader mb-6">
+                    <i class="fa-solid fa-couch text-5xl"></i> </div>
+                <h3 class="text-3xl font-bold font-gruppo mb-4">Höchster Komfort</h3>
+                <p class="text-gray-300 text-base leading-relaxed font-gruppo">
+                    Unsere moderne Fahrzeugflotte bietet höchsten Standard in puncto Sauberkeit und Ausstattung. Lehnen Sie sich zurück und genießen Sie die Fahrt.
+                </p>
+            </div>
+
+            <div class="bg-gray-700 rounded-xl shadow-2xl p-8 text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-taxiYellowHeader mb-6">
+                    <i class="fa-solid fa-credit-card text-5xl"></i> </div>
+                <h3 class="text-3xl font-bold font-gruppo mb-4">Mit Karte zahlbar</h3>
+                <p class="text-gray-300 text-base leading-relaxed font-gruppo">
+                    Unsere Zahlungsmöglichkeiten begrenzen sich nicht nur auf Barzahlung, sondern auch die Zahlung mit der Karte ist verfügbar. 
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    </main>
+
+    <footer class="bg-[#fff303] text-black py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl md:text-xl font-medium" x-data="{ year: new Date().getFullYear() }">
+                © <span x-text="year"></span> dein taxi GmbH. Alle Rechte vorbehalten.
+            </p>
+        </div>
+        <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // AOS Initialisierung
+        AOS.init({
+            once: false,
+            duration: 1600,
+            easing: 'ease-in-out',
+            debounceDelay: 50,
+            throttleDelay: 99
+        });
+
+        // Optimierte Scroll-Animation (for .focus-in-contract-bck)
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.focus-in-contract-bck');
+            let ticking = false;
+
+            function update() {
+                animatedElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementHeight = element.offsetHeight;
+
+                    if (elementTop < window.innerHeight - elementHeight / 3) {
+                        element.classList.add('active');
+                    } else {
+                        // This condition depends on whether you want the animation to reset
+                        // when the element scrolls out of view.
+                        element.classList.remove('active');
+                    }
+                });
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }
+
+            // Initiale Überprüfung
+            update();
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+        });
+    </script>
+</body>
+</html>

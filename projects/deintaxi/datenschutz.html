@@ -1,0 +1,419 @@
+    <!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Datenschutz</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Gruppo&display=swap" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script src="https://unpkg.com/alpinejs" defer></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="public/img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="public/img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="public/img/favicons/favicon-16x16.png">
+    <link rel="manifest" href="public/img/favicons/site.webmanifest">
+    <link rel="mask-icon" href="public/img/favicons/safari-pinned-tab.svg" color="#FFF303"> <meta name="msapplication-TileColor" content="#FFF303"> <meta name="theme-color" content="#ffffff"> <link rel="icon" type="image/x-icon" href="public/img/favicons/favicon.ico">
+
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        taxiYellow: '#FFF399',      // Your primary taxi yellow
+                        taxiYellowHeader: '#FFF303', // Your header yellow
+                    },
+                    fontFamily: {
+                        gruppo: ['Gruppo', 'sans-serif'], // Your custom font
+                    }
+                },
+            },
+        }
+    </script>
+
+    <link rel="stylesheet" href="public/css/styles.css">
+</head>
+
+<body class="bg-[#fff399] text-gray-900 font-gruppo">
+    <header class="fixed top-0 left-0 w-full bg-taxiYellowHeader border-b border-gray-200 z-50" x-data="{ mobileMenuOpen: false }">
+        <div class="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
+            <a href="index.html#home" class="inline-block" data-aos="fade-in" data-aos-duration="1000">
+                <img src="public/img/logo.png" alt="deintaxi Logo" class="relative h-16">
+            </a>
+
+            <nav class="hidden md:flex space-x-8 text-black text-sm" data-aos="fade-in" data-aos-duration="1000" data-aos-delay="200">
+                <a href="index.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Home</a>
+                <a href="index.html#services" class="text-l font-semibold hover:text-black transition hover:scale-110">Leistungen</a>
+                <a href="vehicles.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Fahrzeuge</a>
+                <a href="ueber-uns.html" class="text-l font-semibold hover:text-black transition hover:scale-110">Über uns</a>
+                <a href="index.html#contact" class="text-l font-semibold hover:text-black transition hover:scale-110">Kontakt</a>
+            </nav>
+
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden focus:outline-none">
+                <svg class="w-8 h-8 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path x-show="!mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    <path x-show="mobileMenuOpen" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div
+            x-show="mobileMenuOpen"
+            x-transition:enter="transition ease-out duration-200"
+            x-transition:enter-start="opacity-0 -translate-y-2"
+            x-transition:enter-end="opacity-100 translate-y-0"
+            x-transition:leave="transition ease-in duration-150"
+            x-transition:leave-start="opacity-100 translate-y-0"
+            x-transition:leave-end="opacity-0 -translate-y-2"
+            class="md:hidden bg-taxiYellowHeader shadow-lg"
+        >
+            <div class="px-6 py-4 space-y-4 flex flex-col">
+                <a @click="mobileMenuOpen = false" href="index.html" class="text-xl text-black hover:font-bold transition py-2">Home</a>
+                <a @click="mobileMenuOpen = false" href="index.html#services" class="text-xl text-black hover:font-bold transition py-2">Leistungen</a>
+                <a @click="mobileMenuOpen = false" href="vehicles.html" class="text-xl text-black hover:font-bold transition py-2">Fahrzeuge</a>
+                <a @click="mobileMenuOpen = false" href="ueber-uns.html" class="text-xl text-black hover:font-bold transition py-2">Über uns</a>
+                <a @click="mobileMenuOpen = false" href="index.html#contact" class="text-xl text-black hover:font-bold transition py-2">Kontakt</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section
+            id="home"
+            class="relative text-center px-6 min-h-[calc(100vh-80px)] text-white font-gruppo overflow-hidden flex items-center justify-center"
+            x-data="{ images: ['public/img/PP9.jpg', 'public/img/PP2.jpg', 'public/img/PP3.jpg', 'public/img/PP7.jpg'], active: 0 }"
+            x-init="setInterval(() => active = (active + 1) % images.length, 5000)"
+        >
+            <template x-for="(image, index) in images" :key="index">
+                <div
+                    x-show="active === index"
+                    x-transition:enter="transition-all ease-in-out duration-1000"
+                    x-transition:enter-start="opacity-0 scale-110"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition-all ease-in-out duration-1000"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90"
+                    class="absolute inset-0 bg-center bg-cover z-0 transform-gpu"
+                    :style="`background-image: url('${image}');`"
+                ></div>
+            </template>
+
+            <div class="absolute inset-0 bg-black/50 z-0"></div>
+
+            <div class="relative z-10 w-full py-20" data-aos="fade-in" data-aos-duration="1200">
+                <div class="max-w-4xl mx-auto">
+                    <h1 class="text-4xl md:text-6xl font-gruppo mb-6" data-aos="fade-up" data-aos-duration="800">
+                        Datenschutz
+                    </h1>
+                    <p class="max-w-xl mx-auto mb-10 text-xl md:text-2xl" data-aos="fade-up" data-aos-duration="700">
+                        sicher ● pünktlich ● zuverlässig <br>rund um die Uhr für Sie unterwegs.<br>
+                        <strong class="text-taxi-yellow text-2xl md:text-3xl"> Ihre Nr.1 in Musterstadt ! </strong>
+                    </p>
+
+                    <div class="relative z-50" data-aos="fade-up" data-aos-duration="900">
+                <a href="tel:+49123456789" class="button-link">    
+                        <button class="button">
+                    <div class="bg"></div>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 342 208"
+                        height="208"
+                        width="342"
+                        class="splash"
+                    >
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M54.1054 99.7837C54.1054 99.7837 40.0984 90.7874 26.6893 97.6362C13.2802 104.485 1.5 97.6362 1.5 97.6362"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M285.273 99.7841C285.273 99.7841 299.28 90.7879 312.689 97.6367C326.098 104.486 340.105 95.4893 340.105 95.4893"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M281.133 64.9917C281.133 64.9917 287.96 49.8089 302.934 48.2295C317.908 46.6501 319.712 36.5272 319.712 36.5272"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M281.133 138.984C281.133 138.984 287.96 154.167 302.934 155.746C317.908 157.326 319.712 167.449 319.712 167.449"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M230.578 57.4476C230.578 57.4476 225.785 41.5051 236.061 30.4998C246.337 19.4945 244.686 12.9998 244.686 12.9998"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M230.578 150.528C230.578 150.528 225.785 166.471 236.061 177.476C246.337 188.481 244.686 194.976 244.686 194.976"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M170.392 57.0278C170.392 57.0278 173.89 42.1322 169.571 29.54C165.252 16.9478 168.751 2.05227 168.751 2.05227"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M170.392 150.948C170.392 150.948 173.89 165.844 169.571 178.436C165.252 191.028 168.751 205.924 168.751 205.924"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M112.609 57.4476C112.609 57.4476 117.401 41.5051 107.125 30.4998C96.8492 19.4945 98.5 12.9998 98.5 12.9998"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        d="M112.609 150.528C112.609 150.528 117.401 166.471 107.125 177.476C96.8492 188.481 98.5 194.976 98.5 194.976"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M62.2941 64.9917C62.2941 64.9917 55.4671 49.8089 40.4932 48.2295C25.5194 46.6501 23.7159 36.5272 23.7159 36.5272"
+                        ></path>
+                        <path
+                        stroke-linecap="round"
+                        stroke-width="3"
+                        stroke-opacity="0.3"
+                        d="M62.2941 145.984C62.2941 145.984 55.4671 161.167 40.4932 162.746C25.5194 164.326 23.7159 174.449 23.7159 174.449"
+                        ></path>
+                    </svg>
+
+                    <div class="wrap">
+                        <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 221 42"
+                        height="42"
+                        width="221"
+                        class="path"
+                        >
+                        <path
+                            stroke-linecap="round"
+                            stroke-width="3"
+                            d="M182.674 2H203C211.837 2 219 9.16344 219 18V24C219 32.8366 211.837 40 203 40H18C9.16345 40 2 32.8366 2 24V18C2 9.16344 9.16344 2 18 2H47.8855"
+                        ></path>
+                        </svg>
+
+                        <div class="outline"></div>
+                        <div class="content">
+                        <span class="char state-1">
+                            <span data-label="A" style="--i: 1">A</span>
+                            <span data-label="n" style="--i: 2">n</span>
+                            <span data-label="r" style="--i: 3">r</span>
+                            <span data-label="u" style="--i: 4">u</span>
+                            <span data-label="f" style="--i: 5">f</span>
+                            <span data-label="e" style="--i: 6">e</span>
+                            <span data-label="n" style="--i: 7">n</span>
+                        </span>
+
+                        <div class="icon">
+                            <div></div>
+                        </div>
+
+                        <span class="char state-2">
+                            <span data-label="A" style="--i: 1">A</span>
+                            <span data-label="n" style="--i: 2">n</span>
+                            <span data-label="r" style="--i: 3">r</span>
+                            <span data-label="u" style="--i: 4">u</span>
+                            <span data-label="f" style="--i: 5">f</span>
+                            <span data-label="e" style="--i: 6">e</span>
+                            <span data-label="n" style="--i: 7">n</span>
+                        </span>
+                        </div>
+                    </div>
+                    </button>
+                </a>    
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-mono font-bold text-black mb-12 text-center" data-aos="fade-up">
+                Datenschutzerklärung
+            </h1>
+
+            <div class="prose prose-invert max-w-4xl font-mono font-awesome mx-auto text-lg leading-relaxed space-y-6" data-aos="fade-up" data-aos-delay="100">
+                <p>
+                    Wir nehmen den Schutz Ihrer persönlichen Daten sehr ernst. Diese Datenschutzerklärung informiert Sie darüber, welche personenbezogenen Daten wir erheben, wie wir sie verwenden und welche Rechte Ihnen zustehen.
+                </p>
+
+                <h2>1. Verantwortlicher im Sinne der DSGVO</h2>
+                <p>
+                    Verantwortlicher für die Datenverarbeitung auf dieser Website ist:
+                </p>
+                <p>
+                    <strong>dein taxi</strong><br>
+                    Mustermannstraße 10<br>
+                    12345 Muster<br>
+                    Deutschland<br>
+                    Telefon: +49 123456789<br>
+                    E-Mail: info@musterfirma.de
+                </p>
+                <p>
+                    Vertreten durch: Sermet Özsoy (Geschäftsführer)
+                </p>
+
+                <h2>2. Erfassung allgemeiner Daten und Informationen (Server-Logfiles)</h2>
+                <p>
+                    Bei jedem Aufruf unserer Internetseite erfasst unser System automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners. Folgende Daten können hierbei erhoben werden:
+                </p>
+                <ul>
+                    <li>Browsertyp und Browserversion</li>
+                    <li>verwendetes Betriebssystem</li>
+                    <li>Referrer URL (die zuvor besuchte Seite)</li>
+                    <li>Hostname des zugreifenden Rechners</li>
+                    <li>Uhrzeit der Serveranfrage</li>
+                    <li>IP-Adresse</li>
+                </ul>
+                <p>
+                    Die Verarbeitung dieser Daten dient der Auslieferung der Inhalte unserer Website, der Gewährleistung der Funktionsfähigkeit unserer IT-Systeme sowie der Optimierung unserer Internetseite. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen. Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse).
+                </p>
+
+                <h2>3. Kontaktformular und E-Mail-Kontakt</h2>
+                <p>
+                    Wenn Sie uns per Kontaktformular oder E-Mail Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter.
+                </p>
+                <p>
+                    Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen) oder Art. 6 Abs. 1 lit. a DSGVO (Einwilligung), sofern diese abgefragt wurde. Ihre Daten werden gelöscht, sobald Ihre Anfrage abschließend bearbeitet wurde und keine gesetzlichen Aufbewahrungspflichten entgegenstehen.
+                </p>
+
+                <h2>4. Cookies</h2>
+                <p>
+                    Unsere Website verwendet Cookies. Cookies sind Textdateien, die im Internetbrowser bzw. vom Internetbrowser auf dem Computersystem des Nutzers gespeichert werden. Ruft ein Nutzer eine Website auf, so kann ein Cookie auf dem Betriebssystem des Nutzers gespeichert werden. Dieser Cookie enthält eine charakteristische Zeichenfolge, die eine eindeutige Identifizierung des Browsers beim erneuten Aufruf der Website ermöglicht.
+                </p>
+                <p>
+                    Wir setzen Cookies ein, um unsere Website nutzerfreundlicher zu gestalten. Einige Elemente unserer Internetseite erfordern es, dass der aufrufende Browser auch nach einem Seitenwechsel identifiziert werden kann.
+                </p>
+                <p>
+                    Sie haben die volle Kontrolle über die Verwendung von Cookies. Die meisten Browser sind so eingestellt, dass sie Cookies automatisch akzeptieren. Sie können die Speicherung von Cookies jedoch deaktivieren oder Ihren Browser so einstellen, dass er Sie benachrichtigt, bevor Cookies gespeichert werden.
+                </p>
+                <p>
+                    Rechtsgrundlage für die Verarbeitung personenbezogener Daten mittels Cookies ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse), sofern es sich um technisch notwendige Cookies handelt. Für nicht technisch notwendige Cookies ist die Rechtsgrundlage Ihre Einwilligung nach Art. 6 Abs. 1 lit. a DSGVO.
+                </p>
+
+                <h2>5. Google Maps</h2>
+                <p>
+                    Diese Seite nutzt den Kartendienst Google Maps über eine API. Anbieter ist die Google Ireland Limited ("Google"), Gordon House, Barrow Street, Dublin 4, Irland. Zur Nutzung der Funktionen von Google Maps ist es notwendig, Ihre IP-Adresse zu speichern. Diese Informationen werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert. Der Anbieter dieser Seite hat keinen Einfluss auf diese Datenübertragung.
+                </p>
+                <p>
+                    Die Nutzung von Google Maps erfolgt im Interesse einer ansprechenden Darstellung unserer Online-Angebote und einer leichten Auffindbarkeit der von uns auf der Website angegebenen Orte. Dies stellt ein berechtigtes Interesse im Sinne von Art. 6 Abs. 1 lit. f DSGVO dar.
+                </p>
+                <p>
+                    Mehr Informationen zum Umgang mit Nutzerdaten finden Sie in der Datenschutzerklärung von Google: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-taxiYellow hover:underline">https://policies.google.com/privacy</a>.
+                </p>
+
+                <h2>6. Dauer der Speicherung von personenbezogenen Daten</h2>
+                <p>
+                    Soweit in dieser Datenschutzerklärung keine speziellere Speicherdauer genannt wurde, verbleiben Ihre personenbezogenen Daten bei uns, bis der Zweck für die Datenverarbeitung entfällt. Wenn Sie ein Widerrufsrecht geltend machen oder eine Einwilligung widerrufen, werden Ihre personenbezogenen Daten gelöscht, sofern wir keine anderen rechtlich zulässigen Gründe für die Speicherung Ihrer personenbezogenen Daten haben (z.B. steuer- oder handelsrechtliche Aufbewahrungsfristen); im letztgenannten Fall erfolgt die Löschung nach Wegfall dieser Gründe.
+                </p>
+
+                <h2>7. Ihre Rechte als betroffene Person</h2>
+                <p>
+                    Sie haben das Recht:
+                </p>
+                <ul>
+                    <li>Auskunft über Ihre von uns verarbeiteten personenbezogenen Daten zu verlangen (Art. 15 DSGVO).</li>
+                    <li>die Berichtigung unrichtiger oder die Vervollständigung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen (Art. 16 DSGVO).</li>
+                    <li>die Löschung Ihrer bei uns gespeicherten personenbezogenen Daten zu verlangen (Art. 17 DSGVO), sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</li>
+                    <li>die Einschränkung der Verarbeitung Ihrer personenbezogenen Daten zu verlangen (Art. 18 DSGVO).</li>
+                    <li>Datenübertragbarkeit zu erhalten (Art. 20 DSGVO).</li>
+                    <li>Ihre einmal erteilte Einwilligung jederzeit uns gegenüber zu widerrufen (Art. 7 Abs. 3 DSGVO).</li>
+                    <li>sich bei einer Aufsichtsbehörde zu beschweren (Art. 77 DSGVO). Die für uns zuständige Aufsichtsbehörde ist:
+                        <br>Der Landesbeauftragte für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz
+                        <br>Hintere Bleiche 34
+                        <br>55116 Mainz
+                        <br><a href="https://www.datenschutz.rlp.de/" target="_blank" rel="noopener noreferrer" class="text-taxiYellow hover:underline">https://www.datenschutz.rlp.de/</a>
+                    </li>
+                </ul>
+
+                <h2>8. Änderungen dieser Datenschutzerklärung</h2>
+                <p>
+                    Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen in der Datenschutzerklärung umzusetzen, z.B. bei der Einführung neuer Services. Für Ihren erneuten Besuch gilt dann die neue Datenschutzerklärung.
+                </p>
+
+                <p class="mt-8 text-sm text-gray-400">
+                    Stand: 03. Juni 2025
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#fff303] text-black py-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-xl md:text-xl font-medium" x-data="{ year: new Date().getFullYear() }">
+                © <span x-text="year"></span> dein taxi GmbH. Alle Rechte vorbehalten.
+            </p>
+        </div>
+        <nav class="footer-links">
+        <a href="impressum.html">Impressum</a>
+        <a href="datenschutz.html">Datenschutz</a>
+        </nav>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        // AOS Initialisierung
+        AOS.init({
+            once: false,
+            duration: 1600,
+            easing: 'ease-in-out',
+            debounceDelay: 50,
+            throttleDelay: 99
+        });
+
+        // Optimierte Scroll-Animation (for .focus-in-contract-bck)
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.focus-in-contract-bck');
+            let ticking = false;
+
+            function update() {
+                animatedElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementHeight = element.offsetHeight;
+
+                    if (elementTop < window.innerHeight - elementHeight / 3) {
+                        element.classList.add('active');
+                    } else {
+                        // This condition depends on whether you want the animation to reset
+                        // when the element scrolls out of view.
+                        element.classList.remove('active');
+                    }
+                });
+                ticking = false;
+            }
+
+            function onScroll() {
+                if (!ticking) {
+                    window.requestAnimationFrame(update);
+                    ticking = true;
+                }
+            }
+
+            // Initiale Überprüfung
+            update();
+
+            window.addEventListener('scroll', onScroll, { passive: true });
+            window.addEventListener('resize', update, { passive: true });
+        });
+    </script>
+</body>
+</html>

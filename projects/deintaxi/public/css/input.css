@@ -1,0 +1,27 @@
+/* public/css/input.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Deine benutzerdefinierten CSS-Regeln für die focus-in-contract-bck Animation */
+@keyframes focus-in-contract-bck {
+    0% {
+        letter-spacing: 1em;
+        -webkit-transform: translateZ(300px);
+        transform: translateZ(300px);
+        -webkit-filter: blur(12px);
+        filter: blur(12px);
+        opacity: 0;
+    }
+    100% {
+        -webkit-transform: translateZ(12px);
+        transform: translateZ(12px);
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        opacity: 1;
+    }
+}
+/* Wenn du möchtest, dass diese Animation unendlich läuft, füge 'infinite' hinzu: */
+/* .focus-in-contract-bck {
+    animation: focus-in-contract-bck 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both infinite;
+} */

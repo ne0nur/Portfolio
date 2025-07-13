@@ -1,0 +1,96 @@
+/* gbstyle.css */
+
+/* Custom Scrollbar for horizontal gallery */
+#component-gallery::-webkit-scrollbar {
+  height: 12px;
+}
+
+#component-gallery::-webkit-scrollbar-track {
+  background: #1C1A3E; /* project-bg or project-header-footer */
+  border-radius: 6px;
+}
+
+#component-gallery::-webkit-scrollbar-thumb {
+  background-color: #0DC7BF; /* project-accent */
+  border-radius: 6px;
+  border: 3px solid #1C1A3E; /* project-bg or project-header-footer */
+}
+
+#component-gallery::-webkit-scrollbar-thumb:hover {
+  background-color: #089A94; /* slightly darker accent for hover */
+}
+
+/* Firefox Scrollbar */
+#component-gallery {
+  scrollbar-width: thin;
+  scrollbar-color: #0DC7BF #1C1A3E; /* thumb track */
+}
+
+/* Lightbox Styles */
+.lightbox {
+  display: none; /* Standardmäßig unsichtbar */
+  position: fixed; /* Fixiert über dem gesamten Viewport */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9); /* Dunkler, leicht transparenter Hintergrund */
+  z-index: 1000; /* Stellt sicher, dass es über allem anderen liegt */
+
+  /* === WICHTIGE ÄNDERUNGEN FÜR ZENTRIERUNG UND OPTIK === */
+  justify-content: center; /* Flexbox für horizontale Zentrierung */
+  align-items: center;   /* Flexbox für vertikale Zentrierung */
+  overflow: auto; /* Scrollbalken, falls das Bild größer als der Bildschirm ist */
+  -webkit-backdrop-filter: blur(5px); /* Optionaler Blur-Effekt für den Hintergrund (für Webkit-Browser) */
+  backdrop-filter: blur(5px); /* Optionaler Blur-Effekt für den Hintergrund (Standard) */
+  opacity: 0; /* Start-Transparenz für den Fade-In/Out Effekt */
+  transition: opacity 0.3s ease-in-out; /* Übergang für Opazität */
+}
+
+.lightbox.active {
+  display: flex; /* Wenn aktiv, zeige es als Flex-Container */
+  opacity: 1; /* Zeige es komplett an */
+}
+
+/* Stil für das Bild im Lightbox */
+.lightbox-content {
+  max-width: 90%; /* Maximale Breite, um Rand zu lassen */
+  max-height: 90%; /* Maximale Höhe, um Rand zu lassen */
+  display: block; /* Stellt sicher, dass das Bild richtig gerendert wird */
+  margin: auto; /* Zentriert das Bild bei älteren Browsern / ohne Flexbox als Fallback */
+  border: 3px solid #0DC7BF; /* project-accent border */
+  
+  /* === ZUSÄTZLICHE OPTISCHE VERBESSERUNGEN FÜR DAS BILD === */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7); /* Stärkerer Schatten für mehr Tiefe */
+  border-radius: 8px; /* Abgerundete Ecken am Bild */
+  object-fit: contain; /* Bild wird skaliert, um in den Container zu passen, ohne abgeschnitten zu werden */
+}
+
+/* Schließen-Button */
+.close-btn {
+  position: absolute;
+  top: 20px; /* Leicht nach unten verschoben für besseren Abstand */
+  right: 35px;
+  color: #f1f1f1; /* Hellerer Farbton für bessere Sichtbarkeit auf dunklem Hintergrund */
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+  z-index: 1001; /* Stellt sicher, dass der Button über dem Bild liegt */
+}
+
+.close-btn:hover,
+.close-btn:focus {
+  color: #0DC7BF; /* project-accent für Hover, wie gewünscht */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Optional: Übergang für die Galeriebilder, damit sie beim Klick schöner aussehen */
+.component-item img {
+  transition: transform 0.2s ease-in-out; /* Übergang für Hover-Effekt */
+}
+
+.component-item img:hover {
+  transform: scale(1.02); /* Leichter Zoom-Effekt beim Hovern auf Galeriebildern */
+}
