@@ -1,0 +1,245 @@
+/* Progress Bar Styling */
+.progress-container {
+  width: 100%;
+  background-color: #e5e7eb;
+  border-radius: 0.25rem;
+  height: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+.progress-bar {
+  height: 100%;
+  border-radius: 0.25rem;
+  background-color: #3b82f6;
+  transition: width 0.3s ease;
+}
+
+/* Dark Mode Progress Bars */
+.dark .progress-container {
+  background-color: #374151;
+}
+
+/* Skill Badges */
+.skill-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+/* Certificate Cards */
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+}
+
+.cert-card:hover {
+  transform: translateY(-2px);
+}
+
+/* Badge Grid (might not be used anymore if you're using flexbox directly) */
+.badge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .badge-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Animation for hover effects */
+.hover-grow {
+  transition: transform 0.2s ease;
+}
+
+.hover-grow:hover {
+  transform: scale(1.05);
+}
+
+/* Transparenter Header */
+#main-nav {
+  /* Standardzustand: Komplett transparent */
+  background-color: transparent; /* KEINE Farbe */
+  backdrop-filter: blur(8px); /* Blur-Effekt ist auch im transparenten Zustand aktiv */
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s ease; /* Sanfter Übergang beim Scrollen */
+  position: fixed; /* Bleibt am oberen Rand */
+  width: 100%; /* Volle Breite */
+  top: 0;
+  left: 0;
+  z-index: 50; /* Über anderen Inhalten */
+}
+
+/* Zustand wenn gescrollt: Sichtbar und mit Hintergrund/Schatten */
+#main-nav.scrolled {
+  background-color: rgba(255, 255, 255, 0.089); /* Leicht transparentes Weiß */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border-radius: 0 0 0.75rem 0.75rem; /* Optional: Abgerundete untere Ecken */
+}
+
+/* Dark Mode für den "scrolled" Zustand */
+.dark #main-nav.scrolled {
+  background-color: rgba(17, 24, 39, 0.5); /* Leicht transparentes Dunkelgrau */
+}
+
+/* Hero Section Anpassungen */
+header {
+  position: relative;
+}
+
+/* Navigation Links */
+#main-nav a {
+  position: relative;
+}
+
+#main-nav a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #93c5fd;
+  transition: width 0.3s ease;
+}
+
+#main-nav a:hover:after {
+  width: 100%;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 768px) {
+  #main-nav {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  #main-nav ul {
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* Badge Items - allgemeine Regeln */
+.badge-item {
+  flex: 0 0 auto;
+  scroll-snap-align: start;
+}
+
+/* NEU: Badge-Karten-Dimensionen für Rechteck-Format */
+.badge-card {
+  width: 160px; /* Breite beibehalten */
+  height: 190px; /* Höhe erhöhen, um rechteckiger zu werden und Platz für Text zu schaffen */
+  display: flex; /* Sicherstellen, dass Flexbox für interne Anordnung funktioniert */
+  flex-direction: column; /* Elemente vertikal anordnen */
+  align-items: center; /* Inhalt zentrieren */
+  justify-content: flex-start; /* Inhalt am oberen Rand beginnen */
+  text-align: center; /* Text zentrieren */
+  padding: 1rem;
+}
+
+/* Badge Images */
+.badge-img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  margin-bottom: 0.5rem; /* Etwas Platz unter dem Bild */
+}
+
+/* NEU: Kleinere Schriftgröße für Badge-Beschriftungen */
+.text-sm-custom {
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+  margin-top: 0.25rem; /* Etwas mehr Abstand zum Bild, wenn nötig */
+}
+
+/* Navigation Arrows - Diese Regeln werden nicht mehr benötigt */
+.scroll-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+.scroll-nav.left {
+  left: -20px;
+}
+.scroll-nav.right {
+  right: -20px;
+}
+
+
+/* --- START: Moderne Scrollbar nur für HORIZONTALE BADGE-CONTAINER --- */
+/* Scrollbar für Webkit-Browser (Chrome, Edge, Safari) */
+#ms-learn-badges::-webkit-scrollbar,
+#tryhackme-badges::-webkit-scrollbar {
+  height: 8px; /* Höhe der horizontalen Scrollbar */
+}
+
+#ms-learn-badges::-webkit-scrollbar-track,
+#tryhackme-badges::-webkit-scrollbar-track {
+  background: #E0E7FF; /* Ein sehr helles Blau/Lila als Spur (light mode) */
+  border-radius: 4px; /* Abgerundete Ecken */
+}
+
+#ms-learn-badges::-webkit-scrollbar-thumb,
+#tryhackme-badges::-webkit-scrollbar-thumb {
+  background-color: #0033FF; /* Ihre primary-light Farbe als Scrollbar-Zieher */
+  border-radius: 4px; /* Abgerundete Ecken */
+  border: 1px solid #E0E7FF; /* Ein dünner Rahmen, passend zur Spur */
+}
+
+#ms-learn-badges::-webkit-scrollbar-thumb:hover,
+#tryhackme-badges::-webkit-scrollbar-thumb:hover {
+  background-color: #0600AB; /* Ihre primary-medium Farbe beim Hover */
+}
+
+/* Dark Mode Anpassungen für Webkit-Browser */
+.dark #ms-learn-badges::-webkit-scrollbar-track,
+.dark #tryhackme-badges::-webkit-scrollbar-track {
+  background: #1F2937; /* Ein dunkleres Grau als Spur im Dark Mode (bg-gray-800 ähnlich) */
+}
+
+.dark #ms-learn-badges::-webkit-scrollbar-thumb,
+.dark #tryhackme-badges::-webkit-scrollbar-thumb {
+  background-color: #0600AB; /* primary-medium als Zieher im Dark Mode */
+  border: 1px solid #1F2937; /* Passender Rahmen */
+}
+
+.dark #ms-learn-badges::-webkit-scrollbar-thumb:hover,
+.dark #tryhackme-badges::-webkit-scrollbar-thumb:hover {
+  background-color: #0033FF; /* primary-light beim Hover im Dark Mode */
+}
+
+/* Scrollbar für Firefox */
+#ms-learn-badges,
+#tryhackme-badges {
+  scrollbar-width: thin; /* 'auto' oder 'thin' - macht sie schlanker */
+  scrollbar-color: #0033FF #E0E7FF; /* Farbe des Thumbs und Farbe des Tracks (light mode) */
+}
+
+/* Dark Mode Anpassungen für Firefox */
+.dark #ms-learn-badges,
+.dark #tryhackme-badges {
+  scrollbar-color: #0600AB #1F2937; /* primary-medium als Thumb, dunkleres Grau als Track */
+}
+/* --- ENDE: Moderne Scrollbar nur für HORIZONTALE BADGE-CONTAINER --- */

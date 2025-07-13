@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨🏻‍💻</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        fontFamily: {
+          sans: ['Lexend', 'sans-serif'],
+        },
+      }
+    }
+  </script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 font-sans">
+  <header class="relative h-screen bg-gradient-to-br from-[#0033FF] via-[#0600AB] to-[#00033D] flex flex-col">
+    <nav id="main-nav" class="flex items-center justify-between p-6 bg-transparent backdrop-blur sticky top-0 z-10 transition-all duration-300">
+    <div class="font-bold text-xl tracking-wide text-white">👨🏻‍💻</div>
+    <ul class="flex gap-8 text-base font-medium">
+      <li><a href="#about" class="text-white hover:text-blue-300 transition">Über mich</a></li>
+      <li><a href="#skills" class="text-white hover:text-blue-300 transition">Skills</a></li>
+      <li><a href="#certs" class="text-white hover:text-blue-300 transition">Zertifikate</a></li>
+      <li><a href="#work" class="text-white hover:text-blue-300 transition">Projekte</a></li>
+      <li><a href="#contact-info" class="text-white hover:text-blue-300 transition">Kontakt</a></li>
+    </ul>
+  </nav>
+      <div class="flex-1 flex flex-col justify-center items-center text-center px-4">
+      <h1 class="text-5xl md:text-7xl font-extrabold mb-4">Willkommen auf meinem Portfolio</h1>
+      <p class="text-xl md:text-2xl mb-8">Onur Özel - Fachinformatiker für Systemintegration (Umschulung)</p>
+      <div class="flex gap-4 justify-center">
+        <a href="#work" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition">Projekte</a>
+        <a href="#contact-info" class="border border-blue-600 text-blue-600 px-6 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition">Kontakt</a>
+      </div>
+    </div>
+    <div class="absolute inset-0 z-0 pointer-events-none opacity-30">
+      </div>
+  </header>
+
+  <section id="about" class="max-w-4xl mx-auto py-16 px-4">
+    <h2 class="text-3xl font-bold mb-6">Über mich & Skills</h2>
+    <p class="mb-8 text-lg">Ich bin angehender Fachinformatiker für Systemintegration und begeistert von Netzwerken, Cybersecurity und IoT. Während meiner Ausbildung habe ich mit Windows Server, PowerShell, Hyper-V und Tools wie Cisco Packet Tracer gearbeitet. Mein Security-Wissen habe ich vor allem durch praktische Challenges auf TryHackMe erweitert.</p>
+    <p class="mb-8 text-lg">Ich setze gern sichere und automatisierte IT-Lösungen um und arbeite dabei strukturiert und eigenverantwortlich. Aktuell bereite ich mich auf die Microsoft-Zertifizierung AZ-104 vor und will meine Skills in Systemadministration und Cybersecurity weiter ausbauen.</p>
+    <div id="skills" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Hard Skills</h3>
+        <div class="space-y-4">
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Security Operations Center (SOC) L1</span>
+              <span>80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Threat Detection & Analysis</span>
+              <span>65%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Windows Server</span>
+              <span>70%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 70%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Linux</span>
+              <span>75%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 75%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Netzwerktechnik</span>
+              <span>80%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>HTML/CSS</span>
+              <span>65%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 65%"></div>
+            </div>
+          </div>
+          <div>
+            <div class="flex justify-between mb-1">
+              <span>Microsoft Azure</span>
+              <span>50%</span>
+            </div>
+            <div class="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700">
+              <div class="bg-blue-600 h-2.5 rounded-full" style="width: 50%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-4">Soft Skills</h3>
+        <ul class="flex flex-wrap gap-3">
+          <li class="bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">Strukturierte Arbeitsweise</li>
+          <li class="bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">Eigenverantwortung</li>
+          <li class="bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">Teamfähigkeit</li>
+          <li class="bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">Kommunikation</li>
+          <li class="bg-blue-100 dark:bg-blue-900 px-4 py-2 rounded-lg">Design</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+    <section id="certs" class="bg-gray-100 dark:bg-gray-800 py-16 px-4">
+        <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">Zertifikate & Badges</h2>
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="flex items-center gap-4 bg-white dark:bg-gray-900 rounded-lg p-4 shadow">
+            <img src="assets/img/mslearn.svg" alt="MS Learn" class="w-12 h-12">
+            <div>
+                <div class="font-semibold">Microsoft Certified: Azure Administrator Associate (AZ-104)</div>
+                <div class="text-sm text-gray-500">Status: In Bearbeitung</div>
+                <a href="#" class="text-blue-600 text-sm hover:underline">Details</a>
+            </div>
+            </div>
+            <div class="flex items-center gap-4 bg-white dark:bg-gray-900 rounded-lg p-4 shadow">
+            <img src="assets/img/lpi.svg" alt="LPI" class="w-12 h-12">
+            <div>
+                <div class="font-semibold">LPI Linux Essentials</div>
+                <div class="text-sm text-gray-500">Status: Geplant für 2025</div>
+                <a href="#" class="text-blue-600 text-sm hover:underline">Details</a>
+            </div>
+            </div>
+            <div class="flex items-center gap-4 bg-white dark:bg-gray-900 rounded-lg p-4 shadow">
+            <img src="assets/img/itil.svg" alt="ITIL" class="w-12 h-12">
+            <div>
+                <div class="font-semibold">ITIL® 4 Foundation</div>
+                <div class="text-sm text-gray-500">Status: Geplant für 2025</div>
+                <a href="#" class="text-blue-600 text-sm hover:underline">Details</a>
+            </div>
+            </div>
+        </div>
+            
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">Microsoft Learn Badges</h3>
+                <a href="https://learn.microsoft.com/users/onur-oezel/" target="_blank" class="bg-indigo-600 text-white px-4 py-2 rounded-lg shadow hover:bg-indigo-700 transition flex items-center gap-2 text-sm">
+                    <img src="portfolio/img/Microsoft_logo.svg.png" class="w-4 h-4" alt="Microsoft Learn Logo"> Profil
+                </a>
+            </div>
+            <div class="relative mb-8">
+                <div id="ms-learn-badges" class="flex overflow-x-auto pb-4 space-x-4">
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/NVTSDMUF?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/az-104-administrator-prerequisites.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">Voraussetzungen für Azure-Administratoren</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/XQSTSK4Y?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img//azure-fundamentals-describe-azure-architecture-services.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">Beschreiben der Azure-Architektur und -Dienste</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/A4GLNVM7?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/describe-azure-management-governance.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">Beschreiben der Azure-Verwaltung und -Governance</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/2D9DJZXV?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/microsoft-azure-fundamentals-describe-cloud-concepts.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">AZ-104: Microsoft Azure-Grundlagen: Beschreiben von Cloudkonzepten</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/JUZ76NDT?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/az-104-manage-virtual-networks.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">AZ-104: Konfigurieren und Verwalten von virtuellen Netzwerken für Azure-Administratoren</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/AP88J3Q7?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/explore-endpoint-management.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">MD-102 Erkunden der Endpunktverwaltung</div>
+                    </a>
+
+                    <a href="https://learn.microsoft.com/api/achievements/share/de-de/onur-oezel/ESAY7URP?sharingId=E3437BC2F1A50CE0" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/endpoint-manager-fundamentals.svg" alt="Azure Admin Prerequisites" class="badge-img">
+                    <div class="text-sm-custom">Microsoft Intune-Grundlagen</div>
+                    </a>
+                </div>
+            </div>
+
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold">TryHackMe Zertifikate</h3>
+                <a href="https://tryhackme.com/p/10nur" target="_blank" class="bg-gray-900 text-white px-4 py-2 rounded-lg shadow hover:bg-gray-900 transition flex items-center gap-2 text-sm">
+                    <img src="portfolio/img/thm-logo.png" class="w-4 h-4" alt="TryHackMe Logo"> Profil
+                </a>
+            </div>
+            <div class="relative">
+                <div id="tryhackme-badges" class="flex overflow-x-auto pb-4 space-x-4">
+                    <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-YUX19MASB4.pdf" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/SOC1-Badge.png" alt="SOC Level 1" class="badge-img">
+                    <div class="text-sm-custom">SOC Level 1 (TryHackMe)</div>
+                    </a>
+
+                    <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-G5LBKMVXZC.pdf" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/jrpt1.svg" alt="Jr Pentester Level 1" class="badge-img">
+                    <div class="text-sm-custom">Jr Pentester Level 1 (TryHackMe)</div>
+                    </a>
+
+                    <a href="https://tryhackme-certificates.s3-eu-west-1.amazonaws.com/THM-P1KQI7ATJI.pdf" class="flex-shrink-0 bg-white dark:bg-gray-900 rounded-lg shadow flex flex-col items-center hover:scale-105 transition badge-card">
+                    <img src="portfolio/img/cs101.svg" alt="Cyber Security 101" class="badge-img">
+                    <div class="text-sm-custom">Cyber Security 101 (TryHackMe)</div>
+                    </a>
+                    </div>
+            </div>
+        </div>
+    </section>
+    <section id="work" class="bg-gray-50 dark:bg-gray-900 py-16 px-4">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-bold mb-8">Meine Projekte</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col">
+            <div class="w-full h-48 overflow-hidden rounded mb-4">
+              <img src="/portfolio/projects/deintaxi/public/img/logo.png" alt="Projektbild DeinTaxi" class="w-full h-full object-cover">
+            </div>
+            <div class="font-semibold text-lg mb-2">Website</div>
+            <div class="text-gray-600 dark:text-gray-300 mb-2 text-sm">Eines meiner ersten Projekte war diese Website für ein Taxiunternehmen.</div>
+            <div class="flex gap-2 mb-4"> <span class="bg-blue-200 dark:bg-blue-700 px-2 py-1 rounded text-xs">HTML</span>
+              <span class="bg-green-200 dark:bg-green-700 px-2 py-1 rounded text-xs">CSS</span>
+              <span class="bg-blue-200 dark:bg-orange-700 px-2 py-1 rounded text-xs">JS</span>
+            </div>
+            <a href="/portfolio/projects/deintaxi/index.html"
+              class="mt-auto block text-center
+                      bg-[#FFF303] text-gray-900 px-4 py-2 rounded-full
+                      font-semibold hover:bg-gray-700 hover:text-[#FFF303] transition-colors duration-300 text-sm">
+              Seite ansehen
+            </a>
+          </div>
+
+          <div class="bg-white dark:bg-gray-800 rounded-lg shadow p-4 flex flex-col">
+            <div class="w-full h-48 overflow-hidden rounded mb-4">
+              <img src="/portfolio/img/nintendo_game_boy_pocket__blue__by_blueamnesiac_d73pwv1.png" alt="Gameboy ESP Projekt Bild" class="w-full h-full object-cover">
+            </div>
+            <div class="font-semibold text-lg mb-2">Gameboy ESP Pentest Gerät</div>
+            <div class="text-gray-600 dark:text-gray-300 mb-2 text-sm">Ein mobiles Pentest-Gerät im ikonischen Gameboy-Design, selbst gebaut mit einem ESP32-Board.</div>
+            <div class="flex gap-2 mb-4"> <span class="bg-yellow-200 dark:bg-yellow-700 px-2 py-1 rounded text-xs">Hardware</span>
+              <span class="bg-purple-200 dark:bg-purple-700 px-2 py-1 rounded text-xs">IoT</span>
+              <span class="bg-red-200 dark:bg-red-700 px-2 py-1 rounded text-xs">C/C++</span>
+            </div>
+            <a href="/portfolio/projects/esp32_gbp/gameboy-esp-project.html"
+              class="mt-auto block text-center
+                      bg-[#0033FF] text-project-bg px-4 py-2 rounded-full
+                      font-semibold hover:bg-[#00033D] transition-colors duration-300 text-sm">
+              Seite ansehen
+            </a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  <section id="contact-info" class="max-w-2xl mx-auto py-16 px-4">
+  <h2 class="text-3xl font-bold mb-6 text-center">Kontakt</h2>
+  <div class="flex flex-wrap gap-4 justify-center">
+    <a href="mailto:dein.email@beispiel.de" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700 transition flex items-center gap-2">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg> E-Mail
+    </a>
+    <a href="tel:+4917623909643" class="bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition flex items-center gap-2">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 1.48a1 1 0 01-.188 1.109L5.025 8.256a8.008 8.008 0 004.711 4.711l1.625-1.626a1 1 0 011.109-.188l1.48.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg> Anrufen
+    </a>
+    <a href="https://linkedin.com/in/onur-oezel" target="_blank" class="bg-blue-800 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-900 transition flex items-center gap-2">
+      <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"></path></svg> LinkedIn
+    </a>
+    <a href="https://learn.microsoft.com/users/onur-oezel" target="_blank" class="bg-indigo-600 text-white px-6 py-3 rounded-lg shadow hover:bg-indigo-700 transition flex items-center gap-2">
+      <img src="portfolio/img/Microsoft_logo.svg.png" class="w-5 h-5" alt=""> Microsoft Learn
+    </a>
+    <a href="https://tryhackme.com/p/10nur" target="_blank" class="bg-gray-800 text-white px-6 py-3 rounded-lg shadow hover:bg-gray-900 transition flex items-center gap-2">
+      <img src="portfolio/img/thm-logo.png" class="w-5 h-5" alt=""> TryHackMe
+    </a>
+  </div>
+</section>
+
+  <footer class="bg-gray-200 dark:bg-gray-900 text-gray-600 dark:text-gray-400 py-6 mt-8">
+    <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-center gap-4 px-4">
+      <div>
+        <a href="#" class="hover:underline mr-4">Impressum</a>
+        <a href="#" class="hover:underline">GitHub</a>
+      </div>
+      <div>by Onur & 🤖</div>
+    </div>
+  </footer>
+  <script src="/script.js"></script>
+</body>
+</html>
