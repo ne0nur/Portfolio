@@ -22,7 +22,7 @@ In meinem Portfolio findest du eine kleine Vorstellung meiner Person und ausgew�
 
 Du kannst mich gerne kontaktieren, wenn du Fragen hast, Feedback geben willst oder einfach vernetzt bleiben möchtest.
 
-- 📧 E-Mail: `deine.email@beispiel.de`
+- 📧 E-Mail: `o.oezel@outlook.com`
 - 💼 LinkedIn: [linkedin.com/in/onur-oezel](https://linkedin.com/in/onur-oezel)
 - 🌐 Portfolio: [https://ne0nur.github.io/Portfolio/](https://ne0nur.github.io/Portfolio/)
 
