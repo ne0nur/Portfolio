@@ -238,22 +238,46 @@
 })();
 
 // ============================================
-// 4. NAVBAR SCROLL EFFECT
+// 4. NAVBAR SCROLL EFFECT + SLIDING PILL
 // ============================================
 (function initNavbar() {
   const nav = document.getElementById('main-nav');
+  const navContainer = document.getElementById('nav-container');
+  const links = document.querySelectorAll('.nav-link');
   if (!nav) return;
 
-  function update() {
-    if (window.scrollY > 80) {
+  // Update nav background on scroll
+  function updateNavBg() {
+    if (window.scrollY > 50) {
       nav.classList.add('scrolled');
     } else {
       nav.classList.remove('scrolled');
     }
   }
 
-  window.addEventListener('scroll', update, { passive: true });
-  update();
+  function setActiveLink() {
+    const sections = document.querySelectorAll('section[id]');
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 120) {
+        current = section.getAttribute('id');
+      }
+    });
+    links.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === '#' + current) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  window.addEventListener('scroll', () => {
+    updateNavBg();
+    setActiveLink();
+  }, { passive: true });
+
+  updateNavBg();
+  setTimeout(setActiveLink, 200);
 })();
 
 // ============================================
@@ -276,7 +300,7 @@
         mobileMenu.classList.add('hidden');
       }
 
-      const offset = 80;
+      const offset = 100;
       const top = target.getBoundingClientRect().top + window.scrollY - offset;
 
       window.scrollTo({
