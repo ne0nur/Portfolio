@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="cg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e293b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cy" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f2c94c" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#f2994a" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#cg)"/>
+  <rect x="100" y="180" width="600" height="8" rx="4" fill="url(#cy)" opacity="0.6"/>
+  <rect x="150" y="220" width="200" height="120" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <rect x="170" y="240" width="120" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
+  <rect x="170" y="260" width="80" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <rect x="170" y="275" width="100" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <rect x="380" y="220" width="200" height="120" rx="12" fill="rgba(255,255,255,0.05)" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  <rect x="400" y="240" width="120" height="8" rx="4" fill="rgba(255,255,255,0.3)"/>
+  <rect x="400" y="260" width="80" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <rect x="400" y="275" width="100" height="6" rx="3" fill="rgba(255,255,255,0.15)"/>
+  <circle cx="590" cy="280" r="25" fill="none" stroke="#f2c94c" stroke-width="4" opacity="0.8"/>
+  <path d="M580 280 L590 290 L605 270" fill="none" stroke="#f2c94c" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="400" text-anchor="middle" fill="#f2c94c" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" letter-spacing="4">CITYCAB</text>
+  <text x="400" y="430" text-anchor="middle" fill="rgba(255,255,255,0.5)" font-family="monospace" font-size="13" letter-spacing="2">TAXI MANAGEMENT SAAS</text>
+</svg>

@@ -825,32 +825,77 @@
       </div>
       <div class="grid md:grid-cols-2 gap-8">
 
-        <!-- Project 1: Featured -->
+        <!-- Project 1: CityCab (Featured) -->
         <div class="md:col-span-2 group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,168,255,0.15)]">
           <div class="grid md:grid-cols-2">
             <div class="relative h-64 md:h-auto overflow-hidden">
-              <img src="/Portfolio/projects/deintaxi/public/img/logo.png" alt="DeinTaxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <img src="/Portfolio/img/citycab-thumb.svg" alt="CityCab" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
               <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/50 to-transparent"></div>
               <span class="absolute top-4 left-4 px-3 py-1 bg-brand-500/20 border border-brand-500/30 rounded-full text-xs font-mono text-brand-300">Featured Project</span>
             </div>
             <div class="p-8 flex flex-col justify-center">
-              <h3 class="text-2xl font-bold text-white mb-3">DeinTaxi Website</h3>
-              <p class="text-slate-400 text-sm mb-6 leading-relaxed">Eines meiner ersten Projekte mit KI-Unterstützung — eine Website für ein Taxiunternehmen mit Buchungsfunktion. Konzept, Prompting und Feinschliff von mir; Code-Generierung durch Claude & Cursor.</p>
+              <h3 class="text-2xl font-bold text-white mb-3">CityCab</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">SaaS-Taxi-Management-Plattform mit rollenbasierten Dashboards für Admin, Dispatcher und Fahrer. Entwickelt mit React 19, TypeScript, Tailwind, shadcn/ui, Zustand und Supabase. Vollständig KI-gestützt — Hermes-Agent-Orchestrierung, Claude und Kimi im Daily-Workflow.</p>
               <div class="flex flex-wrap gap-2 mb-6">
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">HTML</span>
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">CSS</span>
-                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">JavaScript</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">React 19</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">TypeScript</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Tailwind</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Supabase</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Zustand</span>
               </div>
-              <a href="/Portfolio/projects/deintaxi/index.html" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
-                Seite ansehen
+              <a href="https://github.com/ne0nur/citycab" target="_blank" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
+                Quellcode auf GitHub
                 <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
               </a>
             </div>
           </div>
         </div>
 
-        <!-- Project 2 -->
+        <!-- Project 2: fibook -->
+        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]">
+          <div class="relative h-48 overflow-hidden">
+            <img src="/Portfolio/img/fibook-thumb.svg" alt="Fi-Book" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">Fi-Book</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">Interaktive Lernplattform für die Fachinformatiker-Umschulung — mit Quiz-Modus, Karteikarten, Formelsammlung und interaktiven Netzwerk-Diagrammen. KI-gestützt entwickelt (Claude, Kimi, Hermes).</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">React 19</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">TypeScript</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Tailwind</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">shadcn/ui</span>
+            </div>
+            <a href="/Portfolio/projects/fibook/index.html" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium text-sm group/link">
+              App ansehen
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3: DeinTaxi -->
         <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(16,185,129,0.12)]">
+          <div class="relative h-48 overflow-hidden">
+            <img src="/Portfolio/projects/deintaxi/public/img/logo.png" alt="DeinTaxi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl font-bold text-white mb-2">DeinTaxi Website</h3>
+            <p class="text-slate-400 text-sm mb-4 leading-relaxed">Eines meiner ersten Projekte mit KI-Unterstützung — eine Website für ein Taxiunternehmen mit Buchungsfunktion. Konzept, Prompting und Feinschliff von mir; Code-Generierung durch Claude.</p>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">HTML</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">CSS</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">JavaScript</span>
+            </div>
+            <a href="/Portfolio/projects/deintaxi/index.html" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium text-sm group/link">
+              Seite ansehen
+              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 4: Telegram Bot -->
+        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(6,182,212,0.12)]">
           <div class="relative h-48 overflow-hidden">
             <img src="/Portfolio/img/telegram_bot.png" alt="Telegram ESP32 Bot" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
@@ -863,15 +908,15 @@
               <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Arduino</span>
               <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">C/C++</span>
             </div>
-            <a href="https://github.com/ne0nur/esp32-fritzbox-statusbot" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium text-sm group/link">
+            <a href="https://github.com/ne0nur/esp32-fritzbox-statusbot" target="_blank" class="inline-flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors font-medium text-sm group/link">
               Projekt ansehen
               <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
           </div>
         </div>
 
-        <!-- Project 3 -->
-        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]">
+        <!-- Project 5: Gameboy ESP -->
+        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-red-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(239,68,68,0.12)]">
           <div class="relative h-48 overflow-hidden">
             <img src="/Portfolio/img/nintendo_game_boy_pocket__blue__by_blueamnesiac_d73pwv1.png" alt="Gameboy ESP" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
             <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
@@ -884,7 +929,7 @@
               <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">IoT</span>
               <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">C/C++</span>
             </div>
-            <a href="/Portfolio/projects/esp32_gbp/gameboy-esp-project.html" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium text-sm group/link">
+            <a href="/Portfolio/projects/esp32_gbp/gameboy-esp-project.html" class="inline-flex items-center gap-2 text-red-400 hover:text-red-300 transition-colors font-medium text-sm group/link">
               Seite ansehen
               <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>

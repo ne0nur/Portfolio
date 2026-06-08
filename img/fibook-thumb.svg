@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4f46e5"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#db2777"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.1)"/>
+      <stop offset="100%" stop-color="rgba(0,0,0,0.3)"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="480" fill="url(#g)"/>
+  <rect width="800" height="480" fill="url(#g2)"/>
+  <g transform="translate(340,140)" fill="none" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" opacity="0.9">
+    <path d="M20 20 L100 20 L100 180 L20 180 Z" rx="8"/>
+    <path d="M35 50 L85 50" opacity="0.6"/>
+    <path d="M35 80 L85 80" opacity="0.6"/>
+    <path d="M35 110 L65 110" opacity="0.6"/>
+    <path d="M100 40 L120 40 L120 160 L100 160" opacity="0.4"/>
+  </g>
+  <text x="400" y="380" text-anchor="middle" fill="white" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="700" letter-spacing="2" opacity="0.95">Fi-Book</text>
+  <text x="400" y="415" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="monospace" font-size="14" letter-spacing="3">FISI LERNPLATTFORM</text>
+</svg>
