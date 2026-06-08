@@ -82,38 +82,44 @@
   <!-- Hero Section -->
   <header class="relative min-h-screen flex flex-col justify-center items-center text-center px-4 z-10">
     <div class="max-w-4xl mx-auto">
-      <div class="mb-6 reveal-hero">
-        <span class="inline-block px-4 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-300 text-sm font-mono tracking-wide">
-          👋 Willkommen
-        </span>
+      <!-- Status Indicator -->
+      <div class="mb-8 reveal-hero">
+        <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-sm font-mono tracking-wide">
+          <span class="relative flex h-2.5 w-2.5">
+            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+            <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
+          </span>
+          Verfügbar ab Sommer 2026
+        </div>
       </div>
       <h1 class="text-5xl md:text-7xl lg:text-8xl font-black mb-6 leading-[1.1] tracking-tight reveal-hero">
         <span class="block text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
           Onur Özel
         </span>
       </h1>
-      <div class="h-8 md:h-12 mb-8 reveal-hero">
+      <div class="h-8 md:h-12 mb-8 reveal-hero flex items-center justify-center gap-2">
+        <span class="text-slate-600 font-mono text-lg select-none">$</span>
         <span id="typewriter" class="text-xl md:text-3xl font-mono text-neon-cyan"></span>
         <span class="inline-block w-0.5 h-6 md:h-8 bg-neon-cyan ml-1 animate-pulse"></span>
       </div>
       <p class="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 reveal-hero leading-relaxed">
-        Fachinformatiker für Systemintegration — begeistert von Netzwerken, Cybersecurity & IoT.
+        Fachinformatiker für Systemintegration — Netzwerke, Security & IoT.<br class="hidden md:block">
+        Gerade im Praktikum bei der Stadt Mannheim, auf dem Weg zum IHK-Abschluss.
       </p>
       <div class="flex flex-wrap gap-4 justify-center reveal-hero">
-        <a href="#work" class="group relative px-8 py-4 bg-brand-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,168,255,0.4)] hover:scale-105">
-          <span class="relative z-10">Projekte entdecken</span>
+        <a href="#timeline" class="group relative px-8 py-4 bg-brand-600 text-white font-semibold rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_0_40px_rgba(0,168,255,0.4)] hover:scale-105">
+          <span class="relative z-10">Mein Werdegang</span>
           <div class="absolute inset-0 bg-gradient-to-r from-brand-500 to-neon-cyan opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </a>
-        <a href="#contact" class="px-8 py-4 border border-slate-600 text-slate-300 font-semibold rounded-full hover:border-brand-400 hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,168,255,0.15)]">
-          Kontakt
+        <a href="mailto:o.oezel@outlook.com" class="px-8 py-4 border border-slate-600 text-slate-300 font-semibold rounded-full hover:border-brand-400 hover:text-white transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,168,255,0.15)]">
+          Schreib mir
         </a>
       </div>
     </div>
 
     <!-- Scroll Indicator -->
     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce-slow">
-      <a href="#about" class="flex flex-col items-center gap-2 text-slate-500 hover:text-brand-400 transition-colors">
-        <span class="text-xs font-mono tracking-widest uppercase">Scroll</span>
+      <a href="#about" class="flex flex-col items-center gap-2 text-slate-600 hover:text-brand-400 transition-colors">
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
       </a>
     </div>
@@ -124,7 +130,7 @@
     <div class="max-w-6xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center">
         <div class="reveal-section">
-          <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Über mich</span>
+          <span class="inline-block px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 font-mono text-xs tracking-widest uppercase mb-4">01 / Über mich</span>
           <h2 class="text-4xl md:text-5xl font-bold mb-8 leading-tight">
             Von der <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Neugier</span> zur Leidenschaft
           </h2>
@@ -135,37 +141,29 @@
           </div>
         </div>
         <div class="reveal-section relative">
-          <div class="absolute -inset-4 bg-gradient-to-r from-brand-500/20 to-neon-cyan/20 rounded-3xl blur-2xl"></div>
-          <div class="relative bg-slate-900/80 backdrop-blur-sm border border-slate-800 rounded-2xl p-8">
-            <h3 class="text-xl font-semibold mb-6 text-white">Quick Facts</h3>
-            <div class="space-y-4">
-              <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-brand-500/20 flex items-center justify-center text-brand-400">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-                </div>
-                <div>
-                  <div class="font-medium text-white">Fachrichtung</div>
-                  <div class="text-sm text-slate-400">Systemintegration</div>
-                </div>
-              </div>
-              <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-neon-cyan/20 flex items-center justify-center text-neon-cyan">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
-                </div>
-                <div>
-                  <div class="font-medium text-white">Lernstil</div>
-                  <div class="text-sm text-slate-400">Hands-on & TryHackMe</div>
-                </div>
-              </div>
-              <div class="flex items-center gap-4 p-3 rounded-xl bg-slate-800/50 hover:bg-slate-800 transition-colors">
-                <div class="w-10 h-10 rounded-lg bg-purple-500/20 flex items-center justify-center text-purple-400">
-                  <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-                </div>
-                <div>
-                  <div class="font-medium text-white">Fokus</div>
-                  <div class="text-sm text-slate-400">Cybersecurity & Automation</div>
-                </div>
-              </div>
+          <div class="absolute -inset-4 bg-gradient-to-r from-brand-500/10 to-neon-cyan/10 rounded-3xl blur-2xl"></div>
+          <!-- Terminal Window -->
+          <div class="relative bg-slate-900/95 border border-slate-700 rounded-2xl overflow-hidden font-mono text-sm shadow-2xl">
+            <!-- Terminal Header -->
+            <div class="flex items-center gap-2 px-4 py-3 bg-slate-800/90 border-b border-slate-700">
+              <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+              <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+              <span class="ml-3 text-slate-500 text-xs">onur@portfolio:~</span>
+            </div>
+            <!-- Terminal Body -->
+            <div class="p-6 space-y-1 text-slate-300 min-h-[280px]">
+              <div class="terminal-line" style="opacity:0"><span class="text-brand-400">$</span> whoami</div>
+              <div class="terminal-line pl-4 text-white" style="opacity:0">Onur Özel — Fachinformatiker für Systemintegration (in Ausbildung)</div>
+              <div class="terminal-line mt-2" style="opacity:0"><span class="text-brand-400">$</span> uptime</div>
+              <div class="terminal-line pl-4 text-white" style="opacity:0">Seit 2024 in Umschulung bei GFN Mannheim</div>
+              <div class="terminal-line mt-2" style="opacity:0"><span class="text-brand-400">$</span> location</div>
+              <div class="terminal-line pl-4 text-white" style="opacity:0">Mannheim, Deutschland</div>
+              <div class="terminal-line mt-2" style="opacity:0"><span class="text-brand-400">$</span> current-role</div>
+              <div class="terminal-line pl-4 text-white" style="opacity:0">Praktikum FB12 IT @ Stadt Mannheim</div>
+              <div class="terminal-line mt-2" style="opacity:0"><span class="text-brand-400">$</span> next-goal</div>
+              <div class="terminal-line pl-4 text-emerald-400" style="opacity:0">Junior Sysadmin / IT-Security ab Sommer 2026</div>
+              <div class="terminal-line mt-2" style="opacity:0"><span class="text-brand-400">$</span> <span class="animate-pulse text-neon-cyan">_</span></div>
             </div>
           </div>
         </div>
@@ -177,7 +175,7 @@
   <section id="timeline" class="relative py-24 md:py-32 z-10 overflow-hidden">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-20 reveal-section">
-        <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Werdegang</span>
+        <span class="inline-block px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 font-mono text-xs tracking-widest uppercase mb-4">02 / Werdegang</span>
         <h2 class="text-4xl md:text-5xl font-bold">Mein <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Weg</span></h2>
       </div>
 
@@ -339,179 +337,259 @@
 
   <!-- Skills Section -->
   <section id="skills" class="relative py-24 md:py-32 z-10 bg-slate-900/30">
-    <div class="max-w-3xl mx-auto px-6">
-      <div class="text-center mb-16 reveal-section">
-        <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Kompetenzen</span>
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-20 reveal-section">
+        <span class="inline-block px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-xs tracking-widest uppercase mb-4">03 / Kompetenzen</span>
         <h2 class="text-4xl md:text-5xl font-bold">Skills & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Technologien</span></h2>
       </div>
 
-      <!-- Systeme & Netzwerk -->
-      <div class="mb-14 reveal-section">
-        <h3 class="text-lg font-semibold mb-5 text-slate-300 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-emerald-400"></span> Systeme & Netzwerk
-        </h3>
-        <div class="space-y-4">
-          <div class="skill-item" data-width="75">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Netzwerktechnik</span>
-              <span class="font-mono text-brand-400">75%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="60">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Linux</span>
-              <span class="font-mono text-brand-400">60%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="55">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Virtualisierung</span>
-              <span class="font-mono text-brand-400">55%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="50">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Windows Server</span>
-              <span class="font-mono text-brand-400">50%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Skill Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
 
-      <!-- Cybersecurity -->
-      <div class="mb-14 reveal-section">
-        <h3 class="text-lg font-semibold mb-5 text-slate-300 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-red-400"></span> Cybersecurity
-        </h3>
-        <div class="space-y-4">
-          <div class="skill-item" data-width="55">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">SOC Operations</span>
-              <span class="font-mono text-brand-400">55%</span>
+        <!-- Systeme & Netzwerk -->
+        <div class="group relative p-8 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(16,185,129,0.12)] reveal-section">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Systeme & Netzwerk</h3>
+                <p class="text-sm text-slate-500">Infrastruktur & Server</p>
+              </div>
             </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="50">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Threat Detection &amp; Analysis</span>
-              <span class="font-mono text-brand-400">50%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="45">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Penetration Testing</span>
-              <span class="font-mono text-brand-400">45%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
+            <div class="space-y-5">
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Netzwerktechnik</div>
+                  <div class="text-xs text-slate-500 mt-0.5">VLAN, Routing, TCP/IP — Praxis im Praktikum</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="4">
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Linux</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Ubuntu, Debian — Server-Administration</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="3">
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Virtualisierung</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Hyper-V, VMware — VMs & Hosts</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="3">
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Windows Server</div>
+                  <div class="text-xs text-slate-500 mt-0.5">AD, DNS, DHCP, GPO</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-emerald-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Tools & Plattformen -->
-      <div class="mb-14 reveal-section">
-        <h3 class="text-lg font-semibold mb-5 text-slate-300 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-purple-400"></span> Tools & Plattformen
-        </h3>
-        <div class="space-y-4">
-          <div class="skill-item" data-width="65">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Cisco Packet Tracer</span>
-              <span class="font-mono text-brand-400">65%</span>
+        <!-- Cybersecurity -->
+        <div class="group relative p-8 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-red-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(248,113,113,0.12)] reveal-section">
+          <div class="absolute inset-0 bg-gradient-to-br from-red-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-center text-red-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Cybersecurity</h3>
+                <p class="text-sm text-slate-500">Defense & Detection</p>
+              </div>
             </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="50">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">PowerShell / Bash Scripting</span>
-              <span class="font-mono text-brand-400">50%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="45">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Git / GitHub</span>
-              <span class="font-mono text-brand-400">45%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="40">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">Python (Basic)</span>
-              <span class="font-mono text-brand-400">40%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
+            <div class="space-y-5">
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">SOC Operations</div>
+                  <div class="text-xs text-slate-500 mt-0.5">SIEM, Alert Triage, Monitoring</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="3">
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Threat Detection</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Anomalieerkennung & Analyse</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Penetration Testing</div>
+                  <div class="text-xs text-slate-500 mt-0.5">TryHackMe, Nmap, Burp Suite</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-red-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- Web-Grundlagen -->
-      <div class="mb-14 reveal-section">
-        <h3 class="text-lg font-semibold mb-5 text-slate-300 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-brand-400"></span> Web-Grundlagen <span class="text-sm font-normal text-slate-500">(Umschulung)</span>
-        </h3>
-        <div class="space-y-4">
-          <div class="skill-item" data-width="50">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">HTML / CSS</span>
-              <span class="font-mono text-brand-400">50%</span>
+        <!-- Tools & Plattformen -->
+        <div class="group relative p-8 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(168,85,247,0.12)] reveal-section">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Tools & Plattformen</h3>
+                <p class="text-sm text-slate-500">Werkzeuge & Scripts</p>
+              </div>
             </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
-            </div>
-          </div>
-          <div class="skill-item" data-width="35">
-            <div class="flex justify-between mb-1.5">
-              <span class="font-medium text-slate-200">JavaScript</span>
-              <span class="font-mono text-brand-400">35%</span>
-            </div>
-            <div class="h-2 bg-slate-800 rounded-full overflow-hidden">
-              <div class="skill-bar h-full bg-gradient-to-r from-brand-500 to-neon-cyan rounded-full" style="width: 0%"></div>
+            <div class="space-y-5">
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Cisco Packet Tracer</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Netzwerk-Simulation & Topologien</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="4">
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">PowerShell / Bash</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Automation & Scripting</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Git / GitHub</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Version Control & Repos</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">Python</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Basic — Scripts & kleine Tools</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="1">
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-purple-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
+
+        <!-- Web-Grundlagen -->
+        <div class="group relative p-8 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_50px_rgba(0,168,255,0.12)] reveal-section">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative">
+            <div class="flex items-center gap-4 mb-8">
+              <div class="w-12 h-12 rounded-xl bg-brand-500/10 border border-brand-500/20 flex items-center justify-center text-brand-400">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+              </div>
+              <div>
+                <h3 class="text-xl font-bold text-white">Web-Grundlagen</h3>
+                <p class="text-sm text-slate-500">Umschulung & Projekte</p>
+              </div>
+            </div>
+            <div class="space-y-5">
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">HTML / CSS</div>
+                  <div class="text-xs text-slate-500 mt-0.5">Struktur, Layout, Responsive Design</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="2">
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+              <div class="skill-entry flex items-start justify-between gap-4">
+                <div>
+                  <div class="text-slate-200 font-medium">JavaScript</div>
+                  <div class="text-xs text-slate-500 mt-0.5">DOM, Events, Basics</div>
+                </div>
+                <div class="signal-bars flex items-end gap-[3px] h-5 shrink-0 mt-1" data-level="1">
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[25%]"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[50%] delay-75"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-[75%] delay-150"></div>
+                  <div class="w-[3px] rounded-sm bg-brand-500/20 transition-all duration-700 h-full delay-200"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
       <!-- Soft Skills -->
       <div class="reveal-section">
-        <h3 class="text-lg font-semibold mb-5 text-slate-300 flex items-center gap-2">
-          <span class="w-2 h-2 rounded-full bg-yellow-400"></span> Soft Skills
-        </h3>
-        <div class="flex flex-wrap gap-3">
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Strukturierte Arbeitsweise</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Eigenverantwortung</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Teamfähigkeit</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Kommunikation</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Problemlösung</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Schnelle Auffassungsgabe</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Zeitmanagement</span>
-          <span class="skill-tag px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Selbstständiges Lernen</span>
+        <div class="text-center mb-8">
+          <h3 class="text-lg font-semibold text-slate-300">Soft Skills</h3>
+        </div>
+        <div class="flex flex-wrap justify-center gap-3">
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Strukturierte Arbeitsweise</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Eigenverantwortung</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Teamfähigkeit</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Kommunikation</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Problemlösung</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Schnelle Auffassungsgabe</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Zeitmanagement</span>
+          <span class="px-5 py-2.5 rounded-xl bg-slate-800/80 border border-slate-700 text-slate-300 hover:border-brand-500/50 hover:text-white hover:shadow-[0_0_20px_rgba(0,168,255,0.15)] transition-all duration-300 cursor-default">Selbstständiges Lernen</span>
         </div>
       </div>
     </div>
@@ -521,46 +599,37 @@
   <section id="certs" class="relative py-24 md:py-32 z-10">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 reveal-section">
-        <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Zertifizierungen</span>
+        <span class="inline-block px-3 py-1 rounded-md bg-yellow-500/10 border border-yellow-500/20 text-yellow-400 font-mono text-xs tracking-widest uppercase mb-4">04 / Zertifikate</span>
         <h2 class="text-4xl md:text-5xl font-bold">Zertifikate & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Badges</span></h2>
       </div>
 
       <!-- Planned Certs -->
-      <div class="grid md:grid-cols-3 gap-6 mb-16 reveal-section">
-        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,168,255,0.1)]">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative flex items-center gap-4">
-            <div class="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0">
-              <img src="/Portfolio/img/azurebadge.png" alt="Azure" class="w-10 h-10 object-contain">
-            </div>
-            <div>
-              <h4 class="font-semibold text-white mb-1">Azure Administrator Associate</h4>
-              <p class="text-sm text-slate-400">AZ-104 • Geplant 2026</p>
-            </div>
+      <div class="flex flex-wrap justify-center gap-4 mb-16 reveal-section">
+        <div class="flex items-center gap-4 px-6 py-4 bg-slate-900/80 border border-slate-700 rounded-xl hover:border-brand-500/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
+            <img src="/Portfolio/img/azurebadge.png" alt="Azure" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <h4 class="font-semibold text-white text-sm">Azure Administrator Associate</h4>
+            <p class="text-xs text-slate-400">AZ-104 • Geplant 2026</p>
           </div>
         </div>
-        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,168,255,0.1)]">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative flex items-center gap-4">
-            <div class="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0">
-              <img src="/Portfolio/img/LPI-Essentials-Logo-300X300.png" alt="LPI" class="w-10 h-10 object-contain">
-            </div>
-            <div>
-              <h4 class="font-semibold text-white mb-1">LPI Linux Essentials</h4>
-              <p class="text-sm text-slate-400">Geplant 2025</p>
-            </div>
+        <div class="flex items-center gap-4 px-6 py-4 bg-slate-900/80 border border-slate-700 rounded-xl hover:border-brand-500/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
+            <img src="/Portfolio/img/LPI-Essentials-Logo-300X300.png" alt="LPI" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <h4 class="font-semibold text-white text-sm">LPI Linux Essentials</h4>
+            <p class="text-xs text-slate-400">Geplant 2025</p>
           </div>
         </div>
-        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,168,255,0.1)]">
-          <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-          <div class="relative flex items-center gap-4">
-            <div class="w-14 h-14 rounded-xl bg-slate-800 flex items-center justify-center shrink-0">
-              <img src="/Portfolio/img/itil_badge.png" alt="ITIL" class="w-10 h-10 object-contain">
-            </div>
-            <div>
-              <h4 class="font-semibold text-white mb-1">ITIL 4 Foundation</h4>
-              <p class="text-sm text-slate-400">Geplant 2026</p>
-            </div>
+        <div class="flex items-center gap-4 px-6 py-4 bg-slate-900/80 border border-slate-700 rounded-xl hover:border-brand-500/40 transition-all duration-300">
+          <div class="w-12 h-12 rounded-lg bg-slate-800 flex items-center justify-center shrink-0">
+            <img src="/Portfolio/img/itil_badge.png" alt="ITIL" class="w-8 h-8 object-contain">
+          </div>
+          <div>
+            <h4 class="font-semibold text-white text-sm">ITIL 4 Foundation</h4>
+            <p class="text-xs text-slate-400">Geplant 2026</p>
           </div>
         </div>
       </div>
@@ -668,47 +737,50 @@
   <section id="work" class="relative py-24 md:py-32 z-10 bg-slate-900/30">
     <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 reveal-section">
-        <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Projekte</span>
+        <span class="inline-block px-3 py-1 rounded-md bg-red-500/10 border border-red-500/20 text-red-400 font-mono text-xs tracking-widest uppercase mb-4">05 / Projekte</span>
         <h2 class="text-4xl md:text-5xl font-bold">Meine <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Projekte</span></h2>
       </div>
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-2 gap-8">
 
-        <!-- Project 1 -->
-        <div class="group reveal-section relative bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(0,168,255,0.12)]">
-          <div class="relative h-52 overflow-hidden">
-            <img src="/Portfolio/projects/deintaxi/public/img/logo.png" alt="DeinTaxi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
-          </div>
-          <div class="p-6">
-            <h3 class="text-xl font-bold text-white mb-2">DeinTaxi Website</h3>
-            <p class="text-slate-400 text-sm mb-4 leading-relaxed">Eines meiner ersten Projekte — eine Website für ein Taxiunternehmen mit Buchungsfunktion.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">HTML</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">CSS</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">JavaScript</span>
+        <!-- Project 1: Featured -->
+        <div class="md:col-span-2 group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-500 hover:shadow-[0_0_60px_rgba(0,168,255,0.15)]">
+          <div class="grid md:grid-cols-2">
+            <div class="relative h-64 md:h-auto overflow-hidden">
+              <img src="/Portfolio/projects/deintaxi/public/img/logo.png" alt="DeinTaxi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <div class="absolute inset-0 bg-gradient-to-r from-slate-900 via-slate-900/50 to-transparent"></div>
+              <span class="absolute top-4 left-4 px-3 py-1 bg-brand-500/20 border border-brand-500/30 rounded-full text-xs font-mono text-brand-300">Featured Project</span>
             </div>
-            <a href="/Portfolio/projects/deintaxi/index.html" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
-              Seite ansehen
-              <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
+            <div class="p-8 flex flex-col justify-center">
+              <h3 class="text-2xl font-bold text-white mb-3">DeinTaxi Website</h3>
+              <p class="text-slate-400 text-sm mb-6 leading-relaxed">Eines meiner ersten Projekte — eine Website für ein Taxiunternehmen mit Buchungsfunktion. HTML, CSS und JavaScript von Grund auf selbst gebaut.</p>
+              <div class="flex flex-wrap gap-2 mb-6">
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">HTML</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">CSS</span>
+                <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">JavaScript</span>
+              </div>
+              <a href="/Portfolio/projects/deintaxi/index.html" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
+                Seite ansehen
+                <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- Project 2 -->
-        <div class="group reveal-section relative bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(0,168,255,0.12)]">
-          <div class="relative h-52 overflow-hidden">
+        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-emerald-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(16,185,129,0.12)]">
+          <div class="relative h-48 overflow-hidden">
             <img src="/Portfolio/img/telegram_bot.png" alt="Telegram ESP32 Bot" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-white mb-2">Telegram ESP32 Bot</h3>
             <p class="text-slate-400 text-sm mb-4 leading-relaxed">ESP32 liest aktive Netzwerkgeräte aus der Fritzbox aus und übermittelt sie per Telegram-Bot.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">ESP32</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">Arduino</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">C/C++</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">ESP32</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Arduino</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">C/C++</span>
             </div>
-            <a href="https://github.com/ne0nur/esp32-fritzbox-statusbot" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
+            <a href="https://github.com/ne0nur/esp32-fritzbox-statusbot" class="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition-colors font-medium text-sm group/link">
               Projekt ansehen
               <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -716,20 +788,20 @@
         </div>
 
         <!-- Project 3 -->
-        <div class="group reveal-section relative bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_0_50px_rgba(0,168,255,0.12)]">
-          <div class="relative h-52 overflow-hidden">
+        <div class="group reveal-section relative bg-slate-900/80 border border-slate-700 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(168,85,247,0.12)]">
+          <div class="relative h-48 overflow-hidden">
             <img src="/Portfolio/img/nintendo_game_boy_pocket__blue__by_blueamnesiac_d73pwv1.png" alt="Gameboy ESP" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
-            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/20 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/30 to-transparent"></div>
           </div>
           <div class="p-6">
             <h3 class="text-xl font-bold text-white mb-2">Gameboy ESP Pentest</h3>
             <p class="text-slate-400 text-sm mb-4 leading-relaxed">Mobiles Pentest-Gerät im ikonischen Gameboy-Design, selbst gebaut mit ESP32-Board.</p>
-            <div class="flex flex-wrap gap-2 mb-6">
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">Hardware</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">IoT</span>
-              <span class="px-3 py-1 bg-slate-800 rounded-full text-xs text-slate-300">C/C++</span>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">Hardware</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">IoT</span>
+              <span class="px-3 py-1 bg-slate-800 rounded-md text-xs text-slate-300">C/C++</span>
             </div>
-            <a href="/Portfolio/projects/esp32_gbp/gameboy-esp-project.html" class="inline-flex items-center gap-2 text-brand-400 hover:text-neon-cyan transition-colors font-medium text-sm group/link">
+            <a href="/Portfolio/projects/esp32_gbp/gameboy-esp-project.html" class="inline-flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors font-medium text-sm group/link">
               Seite ansehen
               <svg class="w-4 h-4 group-hover/link:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
             </a>
@@ -744,35 +816,35 @@
   <section id="contact" class="relative py-24 md:py-32 z-10">
     <div class="max-w-4xl mx-auto px-6">
       <div class="text-center mb-16 reveal-section">
-        <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Kontakt</span>
+        <span class="inline-block px-3 py-1 rounded-md bg-brand-500/10 border border-brand-500/20 text-brand-400 font-mono text-xs tracking-widest uppercase mb-4">06 / Kontakt</span>
         <h2 class="text-4xl md:text-5xl font-bold">Lass uns <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">vernetzen</span></h2>
         <p class="mt-4 text-slate-400 text-lg">Ich freue mich über neue Kontakte und spannende Projekte!</p>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 reveal-section">
-        <a href="mailto:o.oezel@outlook.com" class="group flex flex-col items-center gap-3 p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,168,255,0.1)]">
-          <div class="w-12 h-12 rounded-xl bg-brand-500/20 flex items-center justify-center text-brand-400 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"/><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"/></svg>
+      <div class="reveal-section max-w-xl mx-auto">
+        <div class="bg-slate-900/95 border border-slate-700 rounded-2xl overflow-hidden font-mono text-sm shadow-2xl">
+          <div class="flex items-center gap-2 px-4 py-3 bg-slate-800/90 border-b border-slate-700">
+            <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500/80"></div>
+            <span class="ml-3 text-slate-500 text-xs">onur@portfolio:~</span>
           </div>
-          <span class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">E-Mail</span>
-        </a>
-        <a href="https://linkedin.com/in/onur-oezel" target="_blank" class="group flex flex-col items-center gap-3 p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,168,255,0.1)]">
-          <div class="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center text-blue-400 group-hover:scale-110 transition-transform">
-            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <div class="p-6 space-y-3">
+            <div class="text-slate-500">$ connect --with onur</div>
+            <div class="grid grid-cols-[80px_1fr] gap-x-4 gap-y-2 text-slate-300 items-baseline">
+              <span class="text-brand-400 text-right">email</span>
+              <a href="mailto:o.oezel@outlook.com" class="text-white hover:text-brand-400 transition-colors">o.oezel@outlook.com</a>
+              <span class="text-brand-400 text-right">linkedin</span>
+              <a href="https://linkedin.com/in/onur-oezel" target="_blank" class="text-white hover:text-brand-400 transition-colors">linkedin.com/in/onur-oezel</a>
+              <span class="text-brand-400 text-right">ms-learn</span>
+              <a href="https://learn.microsoft.com/users/onur-oezel" target="_blank" class="text-white hover:text-brand-400 transition-colors">learn.microsoft.com/users/onur-oezel</a>
+              <span class="text-brand-400 text-right">tryhackme</span>
+              <a href="https://tryhackme.com/p/10nur" target="_blank" class="text-white hover:text-brand-400 transition-colors">tryhackme.com/p/10nur</a>
+              <span class="text-brand-400 text-right">github</span>
+              <a href="https://github.com/ne0nur" target="_blank" class="text-white hover:text-brand-400 transition-colors">github.com/ne0nur</a>
+            </div>
+            <div class="pt-2 text-slate-500">$ <span class="animate-pulse text-neon-cyan">_</span></div>
           </div>
-          <span class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">LinkedIn</span>
-        </a>
-        <a href="https://learn.microsoft.com/users/onur-oezel" target="_blank" class="group flex flex-col items-center gap-3 p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,168,255,0.1)]">
-          <div class="w-12 h-12 rounded-xl bg-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-110 transition-transform">
-            <img src="/Portfolio/img/Microsoft_logo.svg.png" class="w-6 h-6" alt="">
-          </div>
-          <span class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">MS Learn</span>
-        </a>
-        <a href="https://tryhackme.com/p/10nur" target="_blank" class="group flex flex-col items-center gap-3 p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_0_30px_rgba(0,168,255,0.1)]">
-          <div class="w-12 h-12 rounded-xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-110 transition-transform">
-            <img src="/Portfolio/img/thm-logo.png" class="w-6 h-6" alt="">
-          </div>
-          <span class="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">TryHackMe</span>
-        </a>
+        </div>
       </div>
     </div>
   </section>

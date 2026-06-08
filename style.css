@@ -112,9 +112,9 @@
   }
 }
 
-/* Skill Bar Animation */
-.skill-bar {
-  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+/* Signal Bars Animation */
+.signal-bars > div {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* Skill Tag Float Animation */

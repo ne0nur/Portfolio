@@ -24,55 +24,56 @@
     constructor() {
       this.x = Math.random() * canvas.width;
       this.y = Math.random() * canvas.height;
-      this.vx = (Math.random() - 0.5) * 0.5;
-      this.vy = (Math.random() - 0.5) * 0.5;
-      this.size = Math.random() * 2 + 0.5;
-      this.baseX = this.x;
-      this.baseY = this.y;
-      this.density = Math.random() * 30 + 1;
+      this.size = Math.random() * 1.5 + 0.5;
+      this.speed = Math.random() * 0.8 + 0.3;
+      this.angle = Math.random() * Math.PI * 2;
+      this.noiseOffset = Math.random() * 1000;
+
+      // Color palette: cyan, purple, emerald — matching the portfolio theme
+      const colors = [
+        'rgba(0, 168, 255, ',   // brand cyan
+        'rgba(168, 85, 247, ',  // purple
+        'rgba(16, 185, 129, ',  // emerald
+        'rgba(56, 189, 248, '   // sky
+      ];
+      this.colorBase = colors[Math.floor(Math.random() * colors.length)];
     }
 
-    update() {
-      // Mouse interaction
-      if (mouse.x != null) {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-        const forceDirectionX = dx / distance;
-        const forceDirectionY = dy / distance;
-        const maxDistance = mouse.radius;
-        const force = (maxDistance - distance) / maxDistance;
-        const directionX = forceDirectionX * force * this.density * 0.6;
-        const directionY = forceDirectionY * force * this.density * 0.6;
+    update(time) {
+      // Flow field: particles follow a sine/cosine wave field based on position
+      const scale = 0.003;
+      const flowAngle =
+        Math.sin(this.x * scale + time * 0.0003 + this.noiseOffset) * Math.PI +
+        Math.cos(this.y * scale + time * 0.0005) * Math.PI;
 
-        if (distance < mouse.radius) {
-          this.x -= directionX;
-          this.y -= directionY;
-        } else {
-          if (this.x !== this.baseX) {
-            const dx = this.x - this.baseX;
-            this.x -= dx / 20;
-          }
-          if (this.y !== this.baseY) {
-            const dy = this.y - this.baseY;
-            this.y -= dy / 20;
-          }
+      this.angle += (flowAngle - this.angle) * 0.05; // smooth turn
+
+      this.x += Math.cos(this.angle) * this.speed;
+      this.y += Math.sin(this.angle) * this.speed;
+
+      // Wrap around edges instead of bouncing
+      if (this.x < -10) this.x = canvas.width + 10;
+      if (this.x > canvas.width + 10) this.x = -10;
+      if (this.y < -10) this.y = canvas.height + 10;
+      if (this.y > canvas.height + 10) this.y = -10;
+
+      // Mouse repulsion
+      if (mouse.x != null) {
+        const dx = this.x - mouse.x;
+        const dy = this.y - mouse.y;
+        const dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < mouse.radius && dist > 0) {
+          const force = (mouse.radius - dist) / mouse.radius;
+          this.x += (dx / dist) * force * 4;
+          this.y += (dy / dist) * force * 4;
         }
       }
-
-      // Normal movement
-      this.x += this.vx;
-      this.y += this.vy;
-
-      // Bounce off edges
-      if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
-      if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
     }
 
     draw() {
       ctx.beginPath();
       ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(0, 168, 255, 0.5)';
+      ctx.fillStyle = this.colorBase + '0.6)';
       ctx.fill();
     }
   }
@@ -86,7 +87,7 @@
   }
 
   function connect() {
-    const maxDist = 120;
+    const maxDist = 100;
     for (let a = 0; a < particles.length; a++) {
       for (let b = a + 1; b < particles.length; b++) {
         const dx = particles[a].x - particles[b].x;
@@ -94,9 +95,9 @@
         const dist = Math.sqrt(dx * dx + dy * dy);
 
         if (dist < maxDist) {
-          const opacity = 1 - dist / maxDist;
-          ctx.strokeStyle = `rgba(0, 168, 255, ${opacity * 0.2})`;
-          ctx.lineWidth = 1;
+          const opacity = (1 - dist / maxDist) * 0.15;
+          ctx.strokeStyle = `rgba(100, 150, 200, ${opacity})`;
+          ctx.lineWidth = 0.8;
           ctx.beginPath();
           ctx.moveTo(particles[a].x, particles[a].y);
           ctx.lineTo(particles[b].x, particles[b].y);
@@ -106,10 +107,10 @@
     }
   }
 
-  function animate() {
+  function animate(time) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     for (const p of particles) {
-      p.update();
+      p.update(time);
       p.draw();
     }
     connect();
@@ -144,11 +145,11 @@
   if (!el) return;
 
   const phrases = [
-    'Fachinformatiker für Systemintegration',
-    'Cybersecurity Enthusiast',
-    'IoT & Hardware Tinkerer',
-    'Netzwerktechnik Nerd',
-    'TryHackMe Learner'
+    'Praktikum @ Stadt Mannheim FB12 IT',
+    'Auf dem Weg zum IHK-Abschluss 2026',
+    'TryHackMe Security Learner',
+    'Netzwerke, Cisco & Infrastructure',
+    'Junior Sysadmin gesucht'
   ];
 
   let phraseIndex = 0;
@@ -193,15 +194,38 @@
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Trigger skill bar animation if inside
-        const bars = entry.target.querySelectorAll('.skill-bar');
-        bars.forEach(bar => {
-          const width = bar.closest('.skill-item')?.dataset.width;
-          if (width) {
+        // Trigger terminal line animation
+        const terminalLines = entry.target.querySelectorAll('.terminal-line');
+        if (terminalLines.length > 0) {
+          terminalLines.forEach((line, i) => {
             setTimeout(() => {
-              bar.style.width = width + '%';
-            }, 300);
-          }
+              line.style.transition = 'opacity 0.4s ease';
+              line.style.opacity = '1';
+            }, i * 120);
+          });
+        }
+
+        // Trigger signal bars animation
+        const signalBars = entry.target.querySelectorAll('.signal-bars');
+        signalBars.forEach((bar, barIndex) => {
+          const level = parseInt(bar.dataset.level) || 0;
+          const divs = bar.querySelectorAll('div');
+          setTimeout(() => {
+            bar.classList.add('active');
+            divs.forEach((div, i) => {
+              setTimeout(() => {
+                if (i < level) {
+                  const classes = Array.from(div.classList);
+                  const opacityClass = classes.find(function(c) { return c.includes('/20'); });
+                  if (opacityClass) {
+                    const fullClass = opacityClass.replace('/20', '');
+                    div.classList.remove(opacityClass);
+                    div.classList.add(fullClass);
+                  }
+                }
+              }, i * 80);
+            });
+          }, barIndex * 150);
         });
       }
     });
