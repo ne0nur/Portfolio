@@ -175,100 +175,127 @@
 
   <!-- Timeline / Ausbildung -->
   <section id="timeline" class="relative py-24 md:py-32 z-10">
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-6xl mx-auto px-6">
       <div class="text-center mb-16 reveal-section">
         <span class="text-brand-400 font-mono text-sm tracking-widest uppercase mb-4 block">Werdegang</span>
         <h2 class="text-4xl md:text-5xl font-bold">Mein <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Weg</span></h2>
       </div>
 
-      <div class="relative">
-        <!-- Vertical line -->
-        <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-brand-500/50 via-brand-500/30 to-transparent transform md:-translate-x-px"></div>
+      <!-- Horizontal Career Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 reveal-section">
 
-        <!-- Item 1: Umschulung -->
-        <div class="reveal-section relative flex flex-col md:flex-row items-start mb-12">
-          <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right"></div>
-          <div class="absolute left-6 md:left-1/2 w-3 h-3 bg-brand-400 rounded-full ring-4 ring-slate-950 transform -translate-x-1.5 md:-translate-x-1.5 mt-1.5"></div>
-          <div class="pl-14 md:pl-12 md:w-1/2">
-            <div class="p-5 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-brand-500/30 transition-all duration-300">
-              <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-500/10 text-brand-400 text-xs font-mono mb-2">2024 – Heute</span>
-              <h4 class="text-lg font-bold text-white mb-1">Umschulung zum Fachinformatiker für Systemintegration</h4>
-              <p class="text-slate-400 text-sm mb-2">Fernakademie für Erwachsenenbildung</p>
-              <ul class="text-slate-400 text-sm space-y-1 list-disc list-inside">
-                <li>Windows Server, Active Directory, DNS, DHCP</li>
-                <li>Netzwerktechnik (TCP/IP, VLAN, Routing)</li>
-                <li>Linux-Administration (Ubuntu, Debian)</li>
-                <li>Virtualisierung mit Hyper-V</li>
-              </ul>
-            </div>
+        <!-- Card 1: Umschulung -->
+        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-brand-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(0,168,255,0.1)] flex flex-col">
+          <div class="absolute inset-0 bg-gradient-to-br from-brand-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative flex-1">
+            <span class="inline-block px-2.5 py-0.5 rounded-md bg-brand-500/10 text-brand-400 text-xs font-mono mb-3">2024 – Heute</span>
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">Umschulung Fachinformatiker Systemintegration</h4>
+            <p class="text-sm text-slate-400 mb-4">Fernakademie für Erwachsenenbildung</p>
+            <ul class="text-slate-400 text-sm space-y-1.5">
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-brand-400 mt-2 shrink-0"></span>
+                <span>Windows Server, AD, DNS, DHCP</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-brand-400 mt-2 shrink-0"></span>
+                <span>Netzwerktechnik & TCP/IP</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-brand-400 mt-2 shrink-0"></span>
+                <span>Linux-Administration</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-brand-400 mt-2 shrink-0"></span>
+                <span>Virtualisierung mit Hyper-V</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Item 2: Praktikum -->
-        <div class="reveal-section relative flex flex-col md:flex-row items-start mb-12">
-          <div class="pl-14 md:pl-0 md:pr-12 md:w-1/2 md:text-right">
-            <div class="p-5 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-brand-500/30 transition-all duration-300">
-              <span class="inline-block px-2.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-2">2025 – 6 Monate</span>
-              <h4 class="text-lg font-bold text-white mb-1">Praktikum IT-Systemhaus</h4>
-              <p class="text-slate-400 text-sm mb-2">Systemintegration & Kundensupport</p>
-              <ul class="text-slate-400 text-sm space-y-1 list-disc list-inside">
-                <li>Erstellen & Pflegen von Windows-Images</li>
-                <li>Hardware-Diagnose und Reparatur</li>
-                <li>Netzwerk-Infrastruktur vor Ort</li>
-                <li>PowerShell-Automatisierung</li>
-              </ul>
-            </div>
-          </div>
-          <div class="absolute left-6 md:left-1/2 w-3 h-3 bg-emerald-400 rounded-full ring-4 ring-slate-950 transform -translate-x-1.5 md:-translate-x-1.5 mt-1.5"></div>
-          <div class="hidden md:block md:w-1/2 md:pl-12"></div>
-        </div>
-
-        <!-- Item 3: CITYCAB -->
-        <div class="reveal-section relative flex flex-col md:flex-row items-start mb-12">
-          <div class="hidden md:block md:w-1/2 md:pr-12 md:text-right"></div>
-          <div class="absolute left-6 md:left-1/2 w-3 h-3 bg-purple-400 rounded-full ring-4 ring-slate-950 transform -translate-x-1.5 md:-translate-x-1.5 mt-1.5"></div>
-          <div class="pl-14 md:pl-12 md:w-1/2">
-            <div class="p-5 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-brand-500/30 transition-all duration-300">
-              <span class="inline-block px-2.5 py-0.5 rounded-md bg-purple-500/10 text-purple-400 text-xs font-mono mb-2">2025 – Heute</span>
-              <h4 class="text-lg font-bold text-white mb-1">CITYCAB — SaaS Taxi-Dashboard</h4>
-              <p class="text-slate-400 text-sm mb-2">Eigenes Projekt (Fullstack)</p>
-              <ul class="text-slate-400 text-sm space-y-1 list-disc list-inside">
-                <li>React 19 + TypeScript + Tailwind CSS + Vite</li>
-                <li>Supabase (Auth, Realtime, RLS, Multi-Tenant)</li>
-                <li>Zustand-State-Management</li>
-                <li>Shadcn/ui Komponenten-Bibliothek</li>
-              </ul>
-            </div>
+        <!-- Card 2: Stadt Mannheim -->
+        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-emerald-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(16,185,129,0.1)] flex flex-col">
+          <div class="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative flex-1">
+            <span class="inline-block px-2.5 py-0.5 rounded-md bg-emerald-500/10 text-emerald-400 text-xs font-mono mb-3">Okt 2025 – Juli 2026</span>
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">Praktikum FB12 Informationstechnologie</h4>
+            <p class="text-sm text-slate-400 mb-4">Stadt Mannheim</p>
+            <ul class="text-slate-400 text-sm space-y-1.5">
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 mt-2 shrink-0"></span>
+                <span>Windows-Administration & AD</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 mt-2 shrink-0"></span>
+                <span>Hardware-Support & Ticketing</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 mt-2 shrink-0"></span>
+                <span>Netzwerk-Infrastruktur vor Ort</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-emerald-400 mt-2 shrink-0"></span>
+                <span>PowerShell-Automatisierung</span>
+              </li>
+            </ul>
           </div>
         </div>
 
-        <!-- Item 4: Sprachen & Status -->
-        <div class="reveal-section relative flex flex-col md:flex-row items-start">
-          <div class="pl-14 md:pl-0 md:pr-12 md:w-1/2 md:text-right">
-            <div class="p-5 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-xl hover:border-brand-500/30 transition-all duration-300">
-              <span class="inline-block px-2.5 py-0.5 rounded-md bg-yellow-500/10 text-yellow-400 text-xs font-mono mb-2">Aktuell</span>
-              <h4 class="text-lg font-bold text-white mb-1">Status & Sprachen</h4>
-              <div class="text-slate-400 text-sm space-y-2">
-                <div class="flex items-center gap-2 md:justify-end">
-                  <span class="text-slate-300">Deutsch</span>
-                  <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-400">Muttersprache</span>
-                </div>
-                <div class="flex items-center gap-2 md:justify-end">
-                  <span class="text-slate-300">Englisch</span>
-                  <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-400">Verhandlungssicher (B2)</span>
-                </div>
-                <div class="flex items-center gap-2 md:justify-end">
-                  <span class="text-slate-300">Türkisch</span>
-                  <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-400">Muttersprache</span>
-                </div>
-                <div class="pt-2 border-t border-slate-800 mt-2">
-                  <p class="text-brand-400 font-medium">✅ Suche ab Sommer 2026 eine Position als Junior Systemadministrator / IT-Security</p>
-                </div>
+        <!-- Card 3: CITYCAB -->
+        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-purple-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(168,85,247,0.1)] flex flex-col">
+          <div class="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative flex-1">
+            <span class="inline-block px-2.5 py-0.5 rounded-md bg-purple-500/10 text-purple-400 text-xs font-mono mb-3">2025 – Heute</span>
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">CITYCAB — SaaS Taxi-Dashboard</h4>
+            <p class="text-sm text-slate-400 mb-4">Eigenes Projekt</p>
+            <ul class="text-slate-400 text-sm space-y-1.5">
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                <span>React 19 + TypeScript + Tailwind</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                <span>Supabase Auth, Realtime, RLS</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                <span>Zustand State-Management</span>
+              </li>
+              <li class="flex items-start gap-2">
+                <span class="w-1 h-1 rounded-full bg-purple-400 mt-2 shrink-0"></span>
+                <span>Shadcn/ui Komponenten</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 4: Status -->
+        <div class="group relative p-6 bg-slate-900/60 backdrop-blur-sm border border-slate-800 rounded-2xl hover:border-yellow-500/30 transition-all duration-500 hover:-translate-y-1 hover:shadow-[0_0_40px_rgba(234,179,8,0.1)] flex flex-col">
+          <div class="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="relative flex-1">
+            <span class="inline-block px-2.5 py-0.5 rounded-md bg-yellow-500/10 text-yellow-400 text-xs font-mono mb-3">Aktuell</span>
+            <h4 class="text-lg font-bold text-white mb-2 leading-snug">Status & Sprachen</h4>
+            <p class="text-sm text-slate-400 mb-4">Verfügbarkeit</p>
+            <div class="text-slate-400 text-sm space-y-2 mb-4">
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                <span class="text-slate-300">Deutsch</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-500">Muttersprache</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                <span class="text-slate-300">Englisch</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-500">B2</span>
+              </div>
+              <div class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-green-400"></span>
+                <span class="text-slate-300">Türkisch</span>
+                <span class="text-xs bg-slate-800 px-2 py-0.5 rounded text-slate-500">Muttersprache</span>
               </div>
             </div>
+            <div class="pt-3 border-t border-slate-800 mt-auto">
+              <p class="text-brand-400 text-sm font-medium">✅ Suche ab Sommer 2026 eine Position als Junior Systemadministrator / IT-Security</p>
+            </div>
           </div>
-          <div class="absolute left-6 md:left-1/2 w-3 h-3 bg-yellow-400 rounded-full ring-4 ring-slate-950 transform -translate-x-1.5 md:-translate-x-1.5 mt-1.5"></div>
-          <div class="hidden md:block md:w-1/2 md:pl-12"></div>
         </div>
 
       </div>
