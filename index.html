@@ -342,6 +342,7 @@
       <div class="text-center mb-20 reveal-section">
         <span class="inline-block px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 font-mono text-xs tracking-widest uppercase mb-4">03 / Kompetenzen</span>
         <h2 class="text-4xl md:text-5xl font-bold">Skills & <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-400 to-neon-cyan">Technologien</span></h2>
+        <p class="mt-4 text-slate-400 text-sm max-w-lg mx-auto">Ehrliche <span class="text-white font-medium">Selbsteinschätzung</span> meiner aktuellen Fähigkeiten auf einer Skala von 1–4 — ohne Überbewertung.</p>
       </div>
 
       <!-- Skill Cards — unified terminal design -->
@@ -357,31 +358,32 @@
               <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
             </div>
             <div class="flex-1 text-center">
-              <span class="text-[11px] text-slate-500 font-mono">sysadmin@portfolio: ~/systeme-netzwerk</span>
+              <span class="text-[11px] text-slate-500 font-mono">skill-rating@portfolio: ~/systeme-netzwerk</span>
             </div>
             <div class="w-10"></div>
           </div>
           <!-- Terminal Body -->
           <div class="p-5 font-mono text-sm">
+            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
             <div class="space-y-3 text-slate-400">
               <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> netzwerk --status</span>
-                <span class="text-emerald-400 text-xs">v4/4 ▰▰▰▰</span>
+                <span><span class="text-emerald-400">$</span> netzwerk --rating</span>
+                <span class="text-emerald-400 text-xs">4/4 ▰▰▰▰</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> linux --distro-check</span>
-                <span class="text-emerald-400 text-xs">v3/4 ▰▰▰▱</span>
+                <span><span class="text-emerald-400">$</span> linux --rating</span>
+                <span class="text-emerald-400 text-xs">3/4 ▰▰▰▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> vm --list</span>
-                <span class="text-emerald-400 text-xs">v3/4 ▰▰▰▱</span>
+                <span><span class="text-emerald-400">$</span> vm --rating</span>
+                <span class="text-emerald-400 text-xs">3/4 ▰▰▰▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> ws --ad-dns-dhcp</span>
-                <span class="text-yellow-400 text-xs">v2/4 ▰▰▱▱</span>
+                <span><span class="text-emerald-400">$</span> windows-server --rating</span>
+                <span class="text-yellow-400 text-xs">2/4 ▰▰▱▱</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2">
+            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">VLAN</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">TCP/IP</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Hyper-V</span>
@@ -400,27 +402,28 @@
               <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
             </div>
             <div class="flex-1 text-center">
-              <span class="text-[11px] text-slate-500 font-mono">sysadmin@portfolio: ~/cybersecurity</span>
+              <span class="text-[11px] text-slate-500 font-mono">skill-rating@portfolio: ~/cybersecurity</span>
             </div>
             <div class="w-10"></div>
           </div>
           <!-- Terminal Body -->
           <div class="p-5 font-mono text-sm">
+            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
             <div class="space-y-3 text-slate-400">
               <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> soc --operations</span>
-                <span class="text-red-400 text-xs">v3/4 ▰▰▰▱</span>
+                <span><span class="text-red-400">$</span> soc --rating</span>
+                <span class="text-red-400 text-xs">3/4 ▰▰▰▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> threat --detect</span>
-                <span class="text-yellow-400 text-xs">v2/4 ▰▰▱▱</span>
+                <span><span class="text-red-400">$</span> threat-detection --rating</span>
+                <span class="text-yellow-400 text-xs">2/4 ▰▰▱▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> pentest --scan</span>
-                <span class="text-yellow-400 text-xs">v2/4 ▰▰▱▱</span>
+                <span><span class="text-red-400">$</span> pentest --rating</span>
+                <span class="text-yellow-400 text-xs">2/4 ▰▰▱▱</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2">
+            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">TryHackMe</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Nmap</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Burp Suite</span>
@@ -438,31 +441,32 @@
               <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
             </div>
             <div class="flex-1 text-center">
-              <span class="text-[11px] text-slate-500 font-mono">sysadmin@portfolio: ~/tools-plattformen</span>
+              <span class="text-[11px] text-slate-500 font-mono">skill-rating@portfolio: ~/tools-plattformen</span>
             </div>
             <div class="w-10"></div>
           </div>
           <!-- Terminal Body -->
           <div class="p-5 font-mono text-sm">
+            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
             <div class="space-y-3 text-slate-400">
               <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> cisco-packet-tracer --version</span>
-                <span class="text-emerald-400 text-xs">v4/4 ▰▰▰▰</span>
+                <span><span class="text-purple-400">$</span> cisco-packet-tracer --rating</span>
+                <span class="text-emerald-400 text-xs">4/4 ▰▰▰▰</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> powershell --check</span>
-                <span class="text-yellow-400 text-xs">v2/4 ▰▰▱▱</span>
+                <span><span class="text-purple-400">$</span> powershell --rating</span>
+                <span class="text-yellow-400 text-xs">2/4 ▰▰▱▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> git status</span>
-                <span class="text-yellow-400 text-xs">v2/4 ▰▰▱▱</span>
+                <span><span class="text-purple-400">$</span> git --rating</span>
+                <span class="text-yellow-400 text-xs">2/4 ▰▰▱▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> python --version</span>
-                <span class="text-red-400 text-xs">v1/4 ▰▱▱▱</span>
+                <span><span class="text-purple-400">$</span> python --rating</span>
+                <span class="text-red-400 text-xs">1/4 ▰▱▱▱</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2">
+            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Cisco</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">PowerShell</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Git</span>
@@ -481,23 +485,24 @@
               <div class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></div>
             </div>
             <div class="flex-1 text-center">
-              <span class="text-[11px] text-slate-500 font-mono">sysadmin@portfolio: ~/web-grundlagen</span>
+              <span class="text-[11px] text-slate-500 font-mono">skill-rating@portfolio: ~/web-grundlagen</span>
             </div>
             <div class="w-10"></div>
           </div>
           <!-- Terminal Body -->
           <div class="p-5 font-mono text-sm">
+            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
             <div class="space-y-3 text-slate-400">
               <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> html-css --validate</span>
-                <span class="text-emerald-400 text-xs">v3/4 ▰▰▰▱</span>
+                <span><span class="text-brand-400">$</span> html-css --rating</span>
+                <span class="text-emerald-400 text-xs">3/4 ▰▰▰▱</span>
               </div>
               <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> javascript --check</span>
-                <span class="text-red-400 text-xs">v1/4 ▰▱▱▱</span>
+                <span><span class="text-brand-400">$</span> javascript --rating</span>
+                <span class="text-red-400 text-xs">1/4 ▰▱▱▱</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2">
+            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">HTML5</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">CSS3</span>
               <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">JS</span>
