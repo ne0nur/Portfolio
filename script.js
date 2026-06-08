@@ -297,3 +297,72 @@
     }
   }, { passive: true });
 })();
+
+// ============================================
+// 8. CAREER PATH ANIMATION
+// ============================================
+(function initCareerPath() {
+  const pathContainer = document.getElementById('career-path');
+  if (!pathContainer) return;
+
+  const pathLine = document.getElementById('path-line');
+  const pathLineMobile = document.getElementById('path-line-mobile');
+  const stations = document.querySelectorAll('.path-station');
+
+  let pathAnimated = false;
+
+  function activateStation(index, delay) {
+    setTimeout(() => {
+      const station = stations[index];
+      if (!station) return;
+
+      const dot = station.querySelector('.station-dot');
+      const card = station.querySelector('.station-card');
+
+      if (dot) dot.classList.add('active');
+      if (card) card.classList.add('active');
+    }, delay);
+  }
+
+  function drawPath() {
+    if (pathAnimated) return;
+    pathAnimated = true;
+
+    // Draw the SVG path
+    if (pathLine) pathLine.classList.add('drawn');
+    if (pathLineMobile) pathLineMobile.classList.add('drawn');
+
+    // Activate stations sequentially
+    activateStation(0, 400);
+    activateStation(1, 1200);
+    activateStation(2, 2000);
+  }
+
+  // Use IntersectionObserver to trigger when section is visible
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        drawPath();
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.2,
+    rootMargin: '0px 0px -100px 0px'
+  });
+
+  observer.observe(pathContainer);
+
+  // Also allow clicking on dots to reveal cards
+  stations.forEach(station => {
+    const dot = station.querySelector('.station-dot');
+    const card = station.querySelector('.station-card');
+
+    if (dot && card) {
+      dot.addEventListener('click', () => {
+        dot.classList.add('active');
+        card.classList.add('active');
+      });
+    }
+  });
+})();
