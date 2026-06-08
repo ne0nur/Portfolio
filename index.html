@@ -400,7 +400,6 @@
 
         <!-- Systeme & Netzwerk -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-emerald-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -412,39 +411,48 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> netzwerk</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Netzwerk</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> linux</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Linux</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> vm</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">VM</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-emerald-400">$</span> windows-server</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Windows Server</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">VLAN</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">TCP/IP</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Hyper-V</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">VMware</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">VLAN</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">TCP/IP</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Hyper-V</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">VMware</span>
             </div>
           </div>
         </div>
 
         <!-- Cybersecurity -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-red-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -456,34 +464,40 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> soc</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">SOC</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> threat-detection</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Threat Detection</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-red-400">$</span> pentest</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Pentest</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">TryHackMe</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Nmap</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Burp Suite</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">TryHackMe</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Nmap</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Burp Suite</span>
             </div>
           </div>
         </div>
 
         <!-- Tools & Plattformen -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-purple-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -495,39 +509,48 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># Eigene Einschätzung dieser Kompetenzen</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> cisco-packet-tracer</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Packet Tracer</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> powershell</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">PowerShell</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> git</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Git</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-purple-400">$</span> python</span>
-                <span class="text-red-400 text-xs">2/5 ▰▰▱▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Python</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-red-500 rounded-full" style="width:40%"></div>
+                </div>
+                <span class="text-red-400 text-xs font-mono w-8 text-right">2/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Cisco</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">PowerShell</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Git</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Python</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Cisco</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">PowerShell</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Git</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Python</span>
             </div>
           </div>
         </div>
 
         <!-- AI-Native Development -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-brand-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -539,46 +562,58 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># KI-gestützte Softwareentwicklung</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> prompt-engineering</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Prompt Engineering</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> ai-assisted-dev</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">AI-Assisted Dev</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> hermes-orchestrierung</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Hermes Orchest.</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> agent-deployment</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Agent Deploy.</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-brand-400">$</span> workflow-integration</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Workflow Int.</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Kimi</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">DeepSeek</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Hermes</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Claude</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">ChatGPT</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Gemini</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Ollama</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Kimi</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">DeepSeek</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Hermes</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Claude</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">ChatGPT</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Gemini</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Ollama</span>
             </div>
           </div>
         </div>
 
         <!-- Netzwerk-Infrastruktur -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-cyan-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -590,40 +625,49 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># Routing, Switching & Firewalling</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-cyan-400">$</span> routing-switching</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Routing / Switching</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-cyan-400">$</span> netzwerksegmentierung</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Segmentierung</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-cyan-400">$</span> firewalling</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Firewalling</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-cyan-400">$</span> pfsense</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">pfSense</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">OSPF</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">BGP</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">VLANs</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">ACLs</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">NAT</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">OSPF</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">BGP</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">VLANs</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">ACLs</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">NAT</span>
             </div>
           </div>
         </div>
 
         <!-- Maker & IoT -->
         <div class="reveal-section relative bg-slate-900/80 border border-slate-800 rounded-2xl overflow-hidden hover:border-orange-500/40 transition-all duration-500 group">
-          <!-- Terminal Header -->
           <div class="flex items-center gap-3 px-4 py-3 bg-slate-950/60 border-b border-slate-800">
             <div class="flex items-center gap-1.5">
               <div class="w-2.5 h-2.5 rounded-full bg-red-500/80"></div>
@@ -635,33 +679,43 @@
             </div>
             <div class="w-10"></div>
           </div>
-          <!-- Terminal Body -->
-          <div class="p-5 font-mono text-sm">
-            <div class="text-slate-600 text-xs mb-3"># Hardware, Mikrocontroller & Schaltungen</div>
-            <div class="space-y-3 text-slate-400">
-              <div class="flex items-center justify-between">
-                <span><span class="text-orange-400">$</span> raspberry-pi</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+          <div class="p-6 font-mono">
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Raspberry Pi</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-orange-400">$</span> esp32-mikrocontroller</span>
-                <span class="text-emerald-400 text-xs">4/5 ▰▰▰▰▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">ESP32</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-emerald-500 rounded-full" style="width:80%"></div>
+                </div>
+                <span class="text-emerald-400 text-xs font-mono w-8 text-right">4/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-orange-400">$</span> schaltplan-design</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Schaltpläne</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
-              <div class="flex items-center justify-between">
-                <span><span class="text-orange-400">$</span> sensor-integration</span>
-                <span class="text-yellow-400 text-xs">3/5 ▰▰▰▱▱</span>
+              <div class="flex items-center gap-3">
+                <span class="text-slate-300 text-sm font-medium w-32 truncate">Sensoren</span>
+                <div class="flex-1 h-2 bg-slate-800 rounded-full overflow-hidden">
+                  <div class="h-full bg-yellow-500 rounded-full" style="width:60%"></div>
+                </div>
+                <span class="text-yellow-400 text-xs font-mono w-8 text-right">3/5</span>
               </div>
             </div>
-            <div class="mt-4 pt-3 border-t border-slate-800 flex gap-2 flex-wrap">
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">RPi 3/4/5</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">ESP32</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">Arduino</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">C/C++</span>
-              <span class="px-2 py-1 rounded bg-slate-800 text-[10px] text-slate-400 font-mono">GPIO</span>
+            <div class="mt-5 pt-4 border-t border-slate-800 flex gap-2 flex-wrap">
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">RPi 3/4/5</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">ESP32</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">Arduino</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">C/C++</span>
+              <span class="px-2.5 py-1 rounded-md bg-slate-800 text-[11px] text-slate-400 font-mono">GPIO</span>
             </div>
           </div>
         </div>
