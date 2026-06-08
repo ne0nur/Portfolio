@@ -1,245 +1,268 @@
-/* Progress Bar Styling */
-.progress-container {
-  width: 100%;
-  background-color: #e5e7eb;
-  border-radius: 0.25rem;
-  height: 0.5rem;
-  margin-top: 0.25rem;
+/* ========================================
+   Portfolio Redesign — Modern, Animated, Playful
+   ======================================== */
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #475569;
 }
 
-.progress-bar {
-  height: 100%;
-  border-radius: 0.25rem;
-  background-color: #3b82f6;
-  transition: width 0.3s ease;
+/* Selection */
+::selection {
+  background: rgba(0, 168, 255, 0.3);
+  color: white;
 }
 
-/* Dark Mode Progress Bars */
-.dark .progress-container {
-  background-color: #374151;
+/* Canvas */
+#particle-canvas {
+  opacity: 0.6;
 }
 
-/* Skill Badges */
-.skill-badge {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-}
-
-/* Certificate Cards */
-.cert-card {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease;
-}
-
-.cert-card:hover {
-  transform: translateY(-2px);
-}
-
-/* Badge Grid (might not be used anymore if you're using flexbox directly) */
-.badge-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-  .badge-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Animation for hover effects */
-.hover-grow {
-  transition: transform 0.2s ease;
-}
-
-.hover-grow:hover {
-  transform: scale(1.05);
-}
-
-/* Transparenter Header */
-#main-nav {
-  /* Standardzustand: Komplett transparent */
-  background-color: transparent; /* KEINE Farbe */
-  backdrop-filter: blur(8px); /* Blur-Effekt ist auch im transparenten Zustand aktiv */
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease; /* Sanfter Übergang beim Scrollen */
-  position: fixed; /* Bleibt am oberen Rand */
-  width: 100%; /* Volle Breite */
-  top: 0;
-  left: 0;
-  z-index: 50; /* Über anderen Inhalten */
-}
-
-/* Zustand wenn gescrollt: Sichtbar und mit Hintergrund/Schatten */
+/* Nav scrolled state */
 #main-nav.scrolled {
-  background-color: rgba(255, 255, 255, 0.089); /* Leicht transparentes Weiß */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  border-radius: 0 0 0.75rem 0.75rem; /* Optional: Abgerundete untere Ecken */
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
 }
 
-/* Dark Mode für den "scrolled" Zustand */
-.dark #main-nav.scrolled {
-  background-color: rgba(17, 24, 39, 0.5); /* Leicht transparentes Dunkelgrau */
+#main-nav.scrolled .nav-link {
+  color: #cbd5e1;
 }
 
-/* Hero Section Anpassungen */
-header {
+/* Nav Link Underline Effect */
+.nav-link {
   position: relative;
 }
 
-/* Navigation Links */
-#main-nav a {
-  position: relative;
-}
-
-#main-nav a:after {
+.nav-link::after {
   content: '';
   position: absolute;
+  bottom: 0;
+  left: 50%;
   width: 0;
   height: 2px;
-  bottom: -4px;
-  left: 0;
-  background-color: #93c5fd;
-  transition: width 0.3s ease;
+  background: linear-gradient(90deg, #00a8ff, #00f3ff);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+  border-radius: 1px;
 }
 
-#main-nav a:hover:after {
-  width: 100%;
+.nav-link:hover::after {
+  width: 60%;
 }
 
-/* Responsive Anpassungen */
-@media (max-width: 768px) {
-  #main-nav {
-    flex-direction: column;
-    padding: 1rem;
+/* Reveal Animations */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger children */
+.reveal-section > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal-section.visible > *:nth-child(1) { transition-delay: 0.1s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(2) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(3) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(4) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(5) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(6) { transition-delay: 0.6s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(7) { transition-delay: 0.7s; opacity: 1; transform: translateY(0); }
+.reveal-section.visible > *:nth-child(8) { transition-delay: 0.8s; opacity: 1; transform: translateY(0); }
+
+/* Hero Reveal */
+.reveal-hero {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: heroReveal 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.reveal-hero:nth-child(1) { animation-delay: 0.2s; }
+.reveal-hero:nth-child(2) { animation-delay: 0.4s; }
+.reveal-hero:nth-child(3) { animation-delay: 0.6s; }
+.reveal-hero:nth-child(4) { animation-delay: 0.8s; }
+.reveal-hero:nth-child(5) { animation-delay: 1.0s; }
+
+@keyframes heroReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-
-  #main-nav ul {
-    margin-top: 1rem;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
 }
 
-/* Badge Items - allgemeine Regeln */
-.badge-item {
-  flex: 0 0 auto;
+/* Skill Bar Animation */
+.skill-bar {
+  transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Skill Tag Float Animation */
+.skill-tag {
+  animation: floatTag 3s ease-in-out infinite;
+}
+
+.skill-tag:nth-child(2n) { animation-delay: 0.5s; }
+.skill-tag:nth-child(3n) { animation-delay: 1s; }
+.skill-tag:nth-child(4n) { animation-delay: 1.5s; }
+
+@keyframes floatTag {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Badge Card Hover */
+.badge-card {
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.badge-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Badge Scroll */
+.badge-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.badge-scroll::-webkit-scrollbar {
+  height: 4px;
+}
+
+.badge-scroll::-webkit-scrollbar-track {
+  background: #1e293b;
+  border-radius: 2px;
+}
+
+.badge-scroll::-webkit-scrollbar-thumb {
+  background: #475569;
+  border-radius: 2px;
+}
+
+.badge-scroll::-webkit-scrollbar-thumb:hover {
+  background: #64748b;
+}
+
+.badge-card {
   scroll-snap-align: start;
 }
 
-/* NEU: Badge-Karten-Dimensionen für Rechteck-Format */
-.badge-card {
-  width: 160px; /* Breite beibehalten */
-  height: 190px; /* Höhe erhöhen, um rechteckiger zu werden und Platz für Text zu schaffen */
-  display: flex; /* Sicherstellen, dass Flexbox für interne Anordnung funktioniert */
-  flex-direction: column; /* Elemente vertikal anordnen */
-  align-items: center; /* Inhalt zentrieren */
-  justify-content: flex-start; /* Inhalt am oberen Rand beginnen */
-  text-align: center; /* Text zentrieren */
-  padding: 1rem;
+/* Smooth Bounce for Scroll Indicator */
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
 }
 
-/* Badge Images */
-.badge-img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  margin-bottom: 0.5rem; /* Etwas Platz unter dem Bild */
+@keyframes bounceSlow {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
 }
 
-/* NEU: Kleinere Schriftgröße für Badge-Beschriftungen */
-.text-sm-custom {
-  font-size: 0.75rem; /* 12px */
-  line-height: 1rem; /* 16px */
-  margin-top: 0.25rem; /* Etwas mehr Abstand zum Bild, wenn nötig */
+/* Project Card Image Zoom */
+.group:hover img {
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Navigation Arrows - Diese Regeln werden nicht mehr benötigt */
-.scroll-nav {
+/* Contact Card Icon Pulse */
+.group:hover .group-hover\\:scale-110 {
+  animation: iconPulse 0.6s ease;
+}
+
+@keyframes iconPulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1.1); }
+}
+
+/* Gradient Text Animation */
+.text-transparent.bg-clip-text {
+  background-size: 200% 200%;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Glow Effect on Buttons */
+.glow-button {
+  position: relative;
+}
+
+.glow-button::before {
+  content: '';
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(255,255,255,0.7);
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-}
-.scroll-nav.left {
-  left: -20px;
-}
-.scroll-nav.right {
-  right: -20px;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, #00a8ff, #00f3ff, #a855f7);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  filter: blur(8px);
 }
 
-
-/* --- START: Moderne Scrollbar nur für HORIZONTALE BADGE-CONTAINER --- */
-/* Scrollbar für Webkit-Browser (Chrome, Edge, Safari) */
-#ms-learn-badges::-webkit-scrollbar,
-#tryhackme-badges::-webkit-scrollbar {
-  height: 8px; /* Höhe der horizontalen Scrollbar */
+.glow-button:hover::before {
+  opacity: 0.6;
 }
 
-#ms-learn-badges::-webkit-scrollbar-track,
-#tryhackme-badges::-webkit-scrollbar-track {
-  background: #E0E7FF; /* Ein sehr helles Blau/Lila als Spur (light mode) */
-  border-radius: 4px; /* Abgerundete Ecken */
+/* Mobile Menu */
+#mobile-menu {
+  transition: all 0.3s ease;
 }
 
-#ms-learn-badges::-webkit-scrollbar-thumb,
-#tryhackme-badges::-webkit-scrollbar-thumb {
-  background-color: #0033FF; /* Ihre primary-light Farbe als Scrollbar-Zieher */
-  border-radius: 4px; /* Abgerundete Ecken */
-  border: 1px solid #E0E7FF; /* Ein dünner Rahmen, passend zur Spur */
+#mobile-menu:not(.hidden) {
+  animation: slideDown 0.3s ease;
 }
 
-#ms-learn-badges::-webkit-scrollbar-thumb:hover,
-#tryhackme-badges::-webkit-scrollbar-thumb:hover {
-  background-color: #0600AB; /* Ihre primary-medium Farbe beim Hover */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* Dark Mode Anpassungen für Webkit-Browser */
-.dark #ms-learn-badges::-webkit-scrollbar-track,
-.dark #tryhackme-badges::-webkit-scrollbar-track {
-  background: #1F2937; /* Ein dunkleres Grau als Spur im Dark Mode (bg-gray-800 ähnlich) */
+/* Responsive */
+@media (max-width: 768px) {
+  .reveal-hero h1 {
+    font-size: 2.5rem;
+  }
+
+  #typewriter {
+    font-size: 1.1rem;
+  }
 }
 
-.dark #ms-learn-badges::-webkit-scrollbar-thumb,
-.dark #tryhackme-badges::-webkit-scrollbar-thumb {
-  background-color: #0600AB; /* primary-medium als Zieher im Dark Mode */
-  border: 1px solid #1F2937; /* Passender Rahmen */
+/* Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
-
-.dark #ms-learn-badges::-webkit-scrollbar-thumb:hover,
-.dark #tryhackme-badges::-webkit-scrollbar-thumb:hover {
-  background-color: #0033FF; /* primary-light beim Hover im Dark Mode */
-}
-
-/* Scrollbar für Firefox */
-#ms-learn-badges,
-#tryhackme-badges {
-  scrollbar-width: thin; /* 'auto' oder 'thin' - macht sie schlanker */
-  scrollbar-color: #0033FF #E0E7FF; /* Farbe des Thumbs und Farbe des Tracks (light mode) */
-}
-
-/* Dark Mode Anpassungen für Firefox */
-.dark #ms-learn-badges,
-.dark #tryhackme-badges {
-  scrollbar-color: #0600AB #1F2937; /* primary-medium als Thumb, dunkleres Grau als Track */
-}
-/* --- ENDE: Moderne Scrollbar nur für HORIZONTALE BADGE-CONTAINER --- */
